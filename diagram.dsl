@@ -18,7 +18,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         ringCentral = softwareSystem "Ring Central" "Telephony Software" "external"
         companyCam = softwareSystem "CompanyCam" "Project Management/Photo Storage" "external"
         Roofr = softwareSystem "Roofr" "Measurement Reporting Software" "external"
-        quickBooks = softwareSystem "QuickBooks" "Accountsing Software" "external"{
+        quickBooks = softwareSystem "QuickBooks" "Accounting Software" "external"{
             quickBooksInvoices = container "Invoices"
             quickBooksPayments = container "Payments"
         }
@@ -57,8 +57,15 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 dispatcherConsole = component "Dispatcher Console"
                 fieldServiceMobile = component "Field Service Mobile"
             }
-            commissionsCalculation = container "Commissions Calculation"{
-                commissionsCalculator = component "Commissions Calculator" "Calculates commissions based on opportunity amount, people associated, and other factors"
+            commissionCalculationService = container "Commission Calculation Service" {
+                commissionsCalculationAutolaunchedFlow = component "Commissions Calculation Autolaunched Flow" "Calculates commissions based on opportunity amount, people associated, and other factors"
+                commissionsProjectTriggeredFlow = component "Commissions Project Triggered Flow" "Triggers commissions calculation when a project is moved to 'Ready for Production'"
+            }
+            availabilityService = container "Availability Service" "LWC on a custom tab"{
+                availabilityManagerView = component "Availability Manager View" "Allows users with proper permissions to view and set all availabilities"
+                availabilitySalesView = component "Availability Sales View" "Allows sales people to view and set their own availabilities"
+                availabilityCrewView = component "Availability Crew View" "Allows crew leads to view and set their own availabilities"
+                availabilityCalendarBlocking = component "Availability Calendar Blocking" "Allows certain time periods to be blocked"
             }
 
         }
@@ -94,6 +101,11 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         dispatcherUser -> salesforce "Uses"
         ringCentralSalesforcePackage -> ringCentral "Calls Leads"
 
+        # Container-to-Container Relationships
+        productionAvailabilityPage -> availabilityService "Uses for setting availabilities"
+        salesAvailabilityPage -> availabilityService "Uses for setting availabilities"
+
+
         # Call Center User Relationships
         callCenterUser -> callCenterLeadRecordPage "Dials Leads"
         callCenterUser -> appointmentScheduling "Schedules Sales Appointments"
@@ -116,6 +128,8 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         accountingUser -> quickBooksInvoices "Creates Invoices"
         accountingUser -> quickbooksPayments "Records Payments"
 
+        # Component-to-Component Relationships
+        commissionsProjectTriggeredFlow -> commissionsCalculationAutolaunchedFlow "Uses to calculate commissions"
     }
     views {
         systemContext salesforce {
@@ -161,7 +175,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         }
 
 
-        component commissionsCalculation {
+        component commissionCalculationService {
             include *
                 autolayout
         }
@@ -181,5 +195,9 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 autolayout
         }
 
+        component availabilityService {
+            include *
+                autolayout
+        }
     }
 }
