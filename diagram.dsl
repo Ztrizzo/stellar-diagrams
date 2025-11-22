@@ -45,9 +45,11 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
             callCenterApp = container "Call Center App"{
                 callCenterOpportunityRecordPage = component "Opportunity Record Page"
                 appointmentScheduling = component "Appointment Scheduling"
+                callCenterLeadRecordPage = component "Lead Record Page"
             }
             canvasserApp = container "Canvasser App"{
                 canvasserOpportunityRecordPage = component "Opportunity Record Page"
+                canvasserLeadRecordPage = component "Lead Record Page"
             }
             fieldService = container "Field Service" {
                 dispatcherConsole = component "Dispatcher Console"
@@ -90,7 +92,8 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         salesUser -> salesAvailabilityPage "View/Set Availability"
         salesUser -> salesOpportunityRecordPage "Records Sales Data"
         callCenterUser -> callCenterOpportunityRecordPage "Uses"
-        canvasserUser -> canvasserOpportunityRecordPage "Uses"
+        canvasserUser -> canvasserLeadRecordPage "Dials Leads"
+        canvasserUser -> canvasserLeadRecordPage "Schedules Appointments"
         projectManagerUser -> fieldServiceMobile "Uses"
         dispatcherUser -> dispatcherConsole "Dispatches sales people and production teams"
         dispatcherUser -> productionAvailabilityPage "Views all availabilities"
@@ -99,56 +102,56 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
 
     }
     views {
-       systemContext salesforce {
-           include *
-           exclude accountingUser->quickBooks
-           autolayout
-       }
-       
-       systemContext quickBooks {
-           include *
-           autolayout
-       }
+        systemContext salesforce {
+            include *
+                exclude accountingUser->quickBooks
+                autolayout
+        }
+
+        systemContext quickBooks {
+            include *
+                autolayout
+        }
 
         container oneClickContractor {
             include *
-            autolayout
+                autolayout
         }
 
         container quickBooks {
             include *
-            autolayout
+                autolayout
         }
 
-       container leadAggregators {
-           include *
-           autolayout
-       }
-        
-       container salesforce {
-           include *
-           autolayout
-       }
+        container leadAggregators {
+            include *
+                autolayout
+        }
 
-       component salesApp {
-           include *
-           autolayout
-       }
+        container salesforce {
+            include *
+                autolayout
+        }
 
-       component callCenterApp {
-           include *
-           autolayout
-       }
+        component salesApp {
+            include *
+                autolayout
+        }
 
-       component canvasserApp {
-           include *
-           autolayout
-       }
+        component callCenterApp {
+            include *
+                autolayout
+        }
 
-       component fieldService {
-           include *
-           autolayout
-       }
+        component canvasserApp {
+            include *
+                autolayout
+        }
+
+        component fieldService {
+            include *
+                autolayout
+        }
 
     }
 }
