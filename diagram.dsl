@@ -6,13 +6,18 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         canvasserUser = person "Canvasser" "Description" "tag"
         adminUser = person "Admin" "Description" "tag"
         accountingUser = person "Accounting" "Description" "tag"
+        projectManagerUser = person "Project Manager" "Production Team Lead" "tag"
+        dispatcherUser = person "Dispatcher" "Dispatches Sales People and Production Teams" "tag"
 
         # External Systems
         oneClickContractor = softwareSystem "One Click Contractor" "Quoting Software" "external"
         ringCentral = softwareSystem "Ring Central" "Telephony Software" "external"
         companyCam = softwareSystem "CompanyCam" "Project Management/Photo Storage" "external"
         Roofr = softwareSystem "Roofr" "Measurement Reporting Software" "external"
-        QuickBooks = softwareSystem "QuickBooks" "Accountsing Software" "external"
+        quickBooks = softwareSystem "QuickBooks" "Accountsing Software" "external"{
+            quickBooksInvoices = container "Invoices"
+            quickBooksPayments = container "Payments"
+        }
         leadAggregators = softwareSystem "Lead Aggregators" "Several external systems that collect leads" "external"{
             angiLeads = container "Angi Lead Aggregator"
             getTheReferral = container "Get The Referral"
@@ -28,7 +33,11 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         salesforce = softwareSystem "Salesforce" "Salesforce CRM" {
             salesApp = container "Sales App" {
                 salesOpportunityRecordPage = component "Opportunity Record Page"
-                availabilityPage = component "Availibility Page"
+                salesAvailabilityPage = component "Availibility Page"
+            }
+            productionApp = container "Production App" {
+                productionAvailabilityPage = component "Availibility Page"
+                
             }
             callCenterApp = container "Call Center App"{
                 callCenterOpportunityRecordPage = component "Opportunity Record Page"
@@ -39,7 +48,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
             }
             fieldService = container "Field Service" {
                 dispatcherConsole = component "Dispatcher Console"
-                fieldServiceMoble = component "Field Service Mobile"
+                fieldServiceMobile = component "Field Service Mobile"
             }
 
         }
@@ -48,7 +57,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         # System-to-System Relationships
         salesforce -> oneClickContractor "Creates Jobs"
         oneClickContractor -> salesforce "Creates Estimates"
-        quickbooks -> salesforce "Publishes Payments/Invoices"
+        salesforce -> quickBooks "Reads Payments/Invoices"
         salesforce -> CompanyCam "Creates Projects/Views photos"
 
 
@@ -68,25 +77,38 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         canvasserUser -> salesforce "Uses"
         adminUser -> salesforce "Uses"
         accountingUser -> salesforce "Uses"
-        accountingUser -> quickbooks "Uses"
+        accountingUser -> quickBooks "Uses"
+        projectManagerUser -> salesforce "Uses"
+        dispatcherUser -> salesforce "Uses"
 
         # User Relationships
-        salesUser -> availabilityPage "View/Set Availability"
+        salesUser -> salesAvailabilityPage "View/Set Availability"
         salesUser -> salesOpportunityRecordPage "Records Sales Data"
         callCenterUser -> callCenterOpportunityRecordPage "Uses"
         canvasserUser -> canvasserOpportunityRecordPage "Uses"
+        projectManagerUser -> fieldServiceMobile "Uses"
+        dispatcherUser -> dispatcherConsole "Dispatches sales people and production teams"
+        dispatcherUser -> productionAvailabilityPage "Views all availabilities"
+        accountingUser -> quickBooksInvoices "Creates Invoices"
+        accountingUser -> quickbooksPayments "Records Payments"
 
     }
     views {
        systemContext salesforce {
            include *
+           exclude accountingUser->quickBooks
            autolayout
        }
-
-       systemContext leadAggregators {
+       
+       systemContext quickBooks {
            include *
            autolayout
        }
+
+        container quickBooks {
+            include *
+            autolayout
+        }
 
        container leadAggregators {
            include *
@@ -112,5 +134,11 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
            include *
            autolayout
        }
+
+       component fieldService {
+           include *
+           autolayout
+       }
+
     }
 }
