@@ -2,6 +2,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
     model {
         # Actors
         salesUser = person "Sales" "Description" "tag"
+        managerUser = person "Manager" "Description" "tag"
         callCenterUser = person "Call Center" "Description" "tag"
         canvasserUser = person "Canvasser" "Description" "tag"
         adminUser = person "Admin" "Description" "tag"
@@ -40,20 +41,24 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
             }
             productionApp = container "Production App" {
                 productionAvailabilityPage = component "Availibility Page"
-                
+                projectScheduling = component "Project Scheduling"
             }
             callCenterApp = container "Call Center App"{
-                callCenterOpportunityRecordPage = component "Opportunity Record Page"
                 appointmentScheduling = component "Appointment Scheduling"
                 callCenterLeadRecordPage = component "Lead Record Page"
+                omnichannel = component "Omnichannel"
+                ringCentralSalesforcePackage = component "Ring Central Salesforce Package"
             }
             canvasserApp = container "Canvasser App"{
                 canvasserOpportunityRecordPage = component "Opportunity Record Page"
                 canvasserLeadRecordPage = component "Lead Record Page"
             }
-            fieldService = container "Field Service" {
+            fieldService = container "Field Service App" {
                 dispatcherConsole = component "Dispatcher Console"
                 fieldServiceMobile = component "Field Service Mobile"
+            }
+            commissionsCalculation = container "Commissions Calculation"{
+                commissionsCalculator = component "Commissions Calculator" "Calculates commissions based on opportunity amount, people associated, and other factors"
             }
 
         }
@@ -66,6 +71,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         salesforce -> CompanyCam "Creates Projects/Views photos"
         oneClickContractorEstimates -> salesforce "Creates Estimates"
         salesforce -> oneClickContractorJobs "Creates Jobs"
+        roofr -> oneClickContractor "Sends Measurement Reports"
 
 
         # Lead Aggregators
@@ -85,16 +91,26 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         adminUser -> salesforce "Uses"
         accountingUser -> salesforce "Uses"
         accountingUser -> quickBooks "Uses"
-        projectManagerUser -> salesforce "Uses"
         dispatcherUser -> salesforce "Uses"
+        ringCentralSalesforcePackage -> ringCentral "Calls Leads"
+
+        # Call Center User Relationships
+        callCenterUser -> callCenterLeadRecordPage "Dials Leads"
+        callCenterUser -> appointmentScheduling "Schedules Sales Appointments"
+        omniChannel -> callCenterUser "Notifies for new Leads"
+        callCenterUser -> ringCentralSalesforcePackage "Uses"
+
+        # Project ManagerUser Relationships
+        projectManagerUser -> salesforce "Uses"
+        projectManagerUser -> fieldServiceMobile "Uses"
+        projectManagerUser -> projectScheduling "Schedules Crews"
+        projectManagerUser -> productionAvailabilityPage "Checks Availabilities"
 
         # User Relationships
         salesUser -> salesAvailabilityPage "View/Set Availability"
         salesUser -> salesOpportunityRecordPage "Records Sales Data"
-        callCenterUser -> callCenterOpportunityRecordPage "Uses"
         canvasserUser -> canvasserLeadRecordPage "Dials Leads"
         canvasserUser -> canvasserLeadRecordPage "Schedules Appointments"
-        projectManagerUser -> fieldServiceMobile "Uses"
         dispatcherUser -> dispatcherConsole "Dispatches sales people and production teams"
         dispatcherUser -> productionAvailabilityPage "Views all availabilities"
         accountingUser -> quickBooksInvoices "Creates Invoices"
@@ -105,6 +121,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         systemContext salesforce {
             include *
                 exclude accountingUser->quickBooks
+                exclude salesforce->callCenterUser
                 autolayout
         }
 
@@ -134,6 +151,17 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         }
 
         component salesApp {
+            include *
+                autolayout
+        }
+
+        component productionApp {
+            include *
+                autolayout
+        }
+
+
+        component commissionsCalculation {
             include *
                 autolayout
         }
