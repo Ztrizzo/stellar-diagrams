@@ -62,16 +62,6 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 dispatcherConsole = component "Dispatcher Console"
                 fieldServiceMobile = component "Field Service Mobile"
             }
-            # database = container "Database"{
-            #     leads = component "Leads"
-            #     opportunities = component "Opportunities"
-            #     accounts = component "Accounts"
-            #     contacts = component "Contacts"
-            #     estimates = component "Estimates"
-            #     projects = component "Projects"
-            #     serviceAppointments = component "Service Appointments"
-            #     shifts = component "Shifts"
-            # }
             commissionCalculationService = container "Commission Calculation Service" {
                 commissionsCalculationAutolaunchedFlow = component "Commissions Calculation Autolaunched Flow" "Calculates commissions based on opportunity amount, people associated, and other factors"
                 commissionsProjectTriggeredFlow = component "Commissions Project Triggered Flow" "Triggers commissions calculation when a project is moved to 'Ready for Production'"
@@ -94,29 +84,8 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         salesUser -> oneClickContractor "Uses"
         salesUser -> oneClickContractorEstimates "Creates Estimates"
         salesUser -> oneClickContractorJobs "Uses"
-        # projects -> CompanyCam "Creates Projects/Views photos"
-        # oneClickContractorEstimates -> estimates "Creates Estimates"
-        # opportunities -> oneClickContractorJobs "Creates Jobs"
         roofr -> oneClickContractor "Sends Measurement Reports"
-        # accounts -> quickBooksCustomer "Creates/Updates Customers"
-        # quickbooksCustomer -> accounts "Creates/Updates Customers"
 
-        # # Lightning Page Database Relationships
-        # salesOpportunityRecordPage -> opportunities "Interacts with"
-        # callCenterLeadRecordPage -> leads "Interacts with"
-        # canvasserOpportunityRecordPage -> opportunities "Interacts with"
-        # canvasserLeadRecordPage -> leads "Interacts with"
-        # projectScheduling -> serviceAppointments "Creates"
-        # appointmentScheduling -> serviceAppointments "Creates"
-        # salesContactPage -> contacts "Interacts with"
-        # salesAccountPage -> accounts "Interacts with"
-        # salesEstimatePage -> estimates "Interacts with"
-        # salesProjectPage -> projects "Interacts with"
-        # availabilityService -> shifts "Creates"
-        # availabilityService -> serviceAppointments "Reads"
-        #
-        #
-        #
         # Lead Aggregators
         angiLeads -> salesforce "Creates Leads"
         getTheReferral -> salesforce "Creates Leads"
@@ -235,10 +204,5 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
             include *
                 autolayout
         }
-
-        # component database {
-        #     include *
-        #         autolayout
-        # }
     }
 }
