@@ -10,7 +10,10 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         dispatcherUser = person "Dispatcher" "Dispatches Sales People and Production Teams" "tag"
 
         # External Systems
-        oneClickContractor = softwareSystem "One Click Contractor" "Quoting Software" "external"
+        oneClickContractor = softwareSystem "One Click Contractor" "Quoting Software" "external"{
+            oneClickContractorJobs = container "Jobs"
+            oneClickContractorEstimates = container "Estimates"
+        }
         ringCentral = softwareSystem "Ring Central" "Telephony Software" "external"
         companyCam = softwareSystem "CompanyCam" "Project Management/Photo Storage" "external"
         Roofr = softwareSystem "Roofr" "Measurement Reporting Software" "external"
@@ -59,6 +62,8 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         oneClickContractor -> salesforce "Creates Estimates"
         salesforce -> quickBooks "Reads Payments/Invoices"
         salesforce -> CompanyCam "Creates Projects/Views photos"
+        oneClickContractorEstimates -> salesforce "Creates Estimates"
+        salesforce -> oneClickContractorJobs "Creates Jobs"
 
 
         # Lead Aggregators
@@ -104,6 +109,11 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
            include *
            autolayout
        }
+
+        container oneClickContractor {
+            include *
+            autolayout
+        }
 
         container quickBooks {
             include *
