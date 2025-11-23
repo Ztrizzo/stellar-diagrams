@@ -1,0 +1,2667 @@
+{
+  "configuration" : { },
+  "description" : "System Diagram for Stellar Roofing Salesforce",
+  "documentation" : { },
+  "id" : 0,
+  "model" : {
+    "people" : [ {
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "Sales",
+      "properties" : {
+        "structurizr.dsl.identifier" : "salesuser"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "9",
+        "id" : "96",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Creates Estimates",
+        "destinationId" : "11",
+        "id" : "97",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "10",
+        "id" : "98",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "28",
+        "id" : "110",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "31",
+        "id" : "163",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "29",
+        "id" : "164",
+        "linkedRelationshipId" : "163",
+        "sourceId" : "1"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "30",
+        "id" : "165",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "32",
+        "id" : "166",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "35",
+        "id" : "167",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "34",
+        "id" : "168",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "33",
+        "id" : "169",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "85",
+        "id" : "181",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "84",
+        "id" : "182",
+        "linkedRelationshipId" : "181",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "Manager",
+      "properties" : {
+        "structurizr.dsl.identifier" : "manageruser"
+      },
+      "relationships" : [ {
+        "description" : "Views and sets all availability",
+        "destinationId" : "53",
+        "id" : "130",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Views and sets all availability",
+        "destinationId" : "28",
+        "id" : "131",
+        "linkedRelationshipId" : "130",
+        "sourceId" : "2"
+      }, {
+        "description" : "Views Reports",
+        "destinationId" : "29",
+        "id" : "160",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Views Reports",
+        "destinationId" : "44",
+        "id" : "161",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Views Reports",
+        "destinationId" : "36",
+        "id" : "162",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "86",
+        "id" : "183",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "84",
+        "id" : "184",
+        "linkedRelationshipId" : "183",
+        "sourceId" : "2"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "Call Center",
+      "properties" : {
+        "structurizr.dsl.identifier" : "callcenteruser"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "12",
+        "id" : "100",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "28",
+        "id" : "111",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dials Leads",
+        "destinationId" : "41",
+        "id" : "147",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dials Leads",
+        "destinationId" : "39",
+        "id" : "148",
+        "linkedRelationshipId" : "147",
+        "sourceId" : "3"
+      }, {
+        "description" : "Schedules Sales Appointments",
+        "destinationId" : "40",
+        "id" : "149",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "43",
+        "id" : "153",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "4",
+      "location" : "Unspecified",
+      "name" : "Canvasser",
+      "properties" : {
+        "structurizr.dsl.identifier" : "canvasseruser"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "28",
+        "id" : "112",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dials Leads",
+        "destinationId" : "46",
+        "id" : "170",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dials Leads",
+        "destinationId" : "44",
+        "id" : "171",
+        "linkedRelationshipId" : "170",
+        "sourceId" : "4"
+      }, {
+        "description" : "Schedules Appointments",
+        "destinationId" : "46",
+        "id" : "172",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Views Converted Opportunities",
+        "destinationId" : "45",
+        "id" : "173",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "87",
+        "id" : "185",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "84",
+        "id" : "186",
+        "linkedRelationshipId" : "185",
+        "sourceId" : "4"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "5",
+      "location" : "Unspecified",
+      "name" : "Admin",
+      "properties" : {
+        "structurizr.dsl.identifier" : "adminuser"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "28",
+        "id" : "113",
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "6",
+      "location" : "Unspecified",
+      "name" : "Accounting",
+      "properties" : {
+        "structurizr.dsl.identifier" : "accountinguser"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "28",
+        "id" : "114",
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "15",
+        "id" : "115",
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Creates Invoices",
+        "destinationId" : "16",
+        "id" : "178",
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Records Payments",
+        "destinationId" : "17",
+        "id" : "179",
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "89",
+        "id" : "189",
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "84",
+        "id" : "190",
+        "linkedRelationshipId" : "189",
+        "sourceId" : "6"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "7",
+      "location" : "Unspecified",
+      "name" : "Project Manager",
+      "properties" : {
+        "structurizr.dsl.identifier" : "projectmanageruser"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "28",
+        "id" : "154",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "49",
+        "id" : "155",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "47",
+        "id" : "156",
+        "linkedRelationshipId" : "155",
+        "sourceId" : "7"
+      }, {
+        "description" : "Schedules Crews",
+        "destinationId" : "38",
+        "id" : "157",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Schedules Crews",
+        "destinationId" : "36",
+        "id" : "158",
+        "linkedRelationshipId" : "157",
+        "sourceId" : "7"
+      }, {
+        "description" : "Checks Availabilities",
+        "destinationId" : "37",
+        "id" : "159",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "90",
+        "id" : "191",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "84",
+        "id" : "192",
+        "linkedRelationshipId" : "191",
+        "sourceId" : "7"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "id" : "8",
+      "location" : "Unspecified",
+      "name" : "Dispatcher",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dispatcheruser"
+      },
+      "relationships" : [ {
+        "description" : "Uses",
+        "destinationId" : "28",
+        "id" : "116",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dispatches sales people and production teams",
+        "destinationId" : "48",
+        "id" : "174",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Dispatches sales people and production teams",
+        "destinationId" : "47",
+        "id" : "175",
+        "linkedRelationshipId" : "174",
+        "sourceId" : "8"
+      }, {
+        "description" : "Views all availabilities",
+        "destinationId" : "37",
+        "id" : "176",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Views all availabilities",
+        "destinationId" : "36",
+        "id" : "177",
+        "linkedRelationshipId" : "176",
+        "sourceId" : "8"
+      }, {
+        "description" : "Has",
+        "destinationId" : "88",
+        "id" : "187",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Has",
+        "destinationId" : "84",
+        "id" : "188",
+        "linkedRelationshipId" : "187",
+        "sourceId" : "8"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "documentation" : { },
+        "id" : "10",
+        "name" : "Jobs",
+        "properties" : {
+          "structurizr.dsl.identifier" : "oneclickcontractorjobs"
+        },
+        "relationships" : [ {
+          "description" : "Job is Sold",
+          "destinationId" : "73",
+          "id" : "212",
+          "sourceId" : "10",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Job is Sold",
+          "destinationId" : "59",
+          "id" : "213",
+          "linkedRelationshipId" : "212",
+          "sourceId" : "10"
+        }, {
+          "description" : "Job is Sold",
+          "destinationId" : "28",
+          "id" : "214",
+          "linkedRelationshipId" : "212",
+          "sourceId" : "10"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "11",
+        "name" : "Estimates",
+        "properties" : {
+          "structurizr.dsl.identifier" : "oneclickcontractorestimates"
+        },
+        "relationships" : [ {
+          "description" : "Estimates are Created",
+          "destinationId" : "72",
+          "id" : "207",
+          "sourceId" : "11",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Estimates are Created",
+          "destinationId" : "59",
+          "id" : "208",
+          "linkedRelationshipId" : "207",
+          "sourceId" : "11"
+        }, {
+          "description" : "Estimates are Created",
+          "destinationId" : "28",
+          "id" : "209",
+          "linkedRelationshipId" : "207",
+          "sourceId" : "11"
+        } ],
+        "tags" : "Element,Container"
+      } ],
+      "description" : "Quoting Software",
+      "documentation" : { },
+      "id" : "9",
+      "location" : "Unspecified",
+      "name" : "One Click Contractor",
+      "properties" : {
+        "structurizr.dsl.identifier" : "oneclickcontractor"
+      },
+      "relationships" : [ {
+        "description" : "Creates Estimates",
+        "destinationId" : "28",
+        "id" : "92",
+        "sourceId" : "9",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Estimates are Created",
+        "destinationId" : "72",
+        "id" : "210",
+        "linkedRelationshipId" : "207",
+        "sourceId" : "9"
+      }, {
+        "description" : "Estimates are Created",
+        "destinationId" : "59",
+        "id" : "211",
+        "linkedRelationshipId" : "207",
+        "sourceId" : "9"
+      }, {
+        "description" : "Job is Sold",
+        "destinationId" : "73",
+        "id" : "215",
+        "linkedRelationshipId" : "212",
+        "sourceId" : "9"
+      } ],
+      "tags" : "Element,Software System,external"
+    }, {
+      "description" : "Telephony Software",
+      "documentation" : { },
+      "id" : "12",
+      "location" : "Unspecified",
+      "name" : "Ring Central",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ringcentral"
+      },
+      "tags" : "Element,Software System,external"
+    }, {
+      "description" : "Project Management/Photo Storage",
+      "documentation" : { },
+      "id" : "13",
+      "location" : "Unspecified",
+      "name" : "CompanyCam",
+      "properties" : {
+        "structurizr.dsl.identifier" : "companycam"
+      },
+      "tags" : "Element,Software System,external"
+    }, {
+      "description" : "Measurement Reporting Software",
+      "documentation" : { },
+      "id" : "14",
+      "location" : "Unspecified",
+      "name" : "Roofr",
+      "properties" : {
+        "structurizr.dsl.identifier" : "roofr"
+      },
+      "relationships" : [ {
+        "description" : "Sends Measurement Reports",
+        "destinationId" : "9",
+        "id" : "99",
+        "sourceId" : "14",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,external"
+    }, {
+      "containers" : [ {
+        "documentation" : { },
+        "id" : "16",
+        "name" : "Invoices",
+        "properties" : {
+          "structurizr.dsl.identifier" : "quickbooksinvoices"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "17",
+        "name" : "Payments",
+        "properties" : {
+          "structurizr.dsl.identifier" : "quickbookspayments"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "18",
+        "name" : "Customers",
+        "properties" : {
+          "structurizr.dsl.identifier" : "quickbookscustomer"
+        },
+        "relationships" : [ {
+          "description" : "2-way Sync to Accounts",
+          "destinationId" : "28",
+          "id" : "94",
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      } ],
+      "description" : "Accounting Software",
+      "documentation" : { },
+      "id" : "15",
+      "location" : "Unspecified",
+      "name" : "QuickBooks",
+      "properties" : {
+        "structurizr.dsl.identifier" : "quickbooks"
+      },
+      "relationships" : [ {
+        "description" : "2-way Sync to Accounts",
+        "destinationId" : "28",
+        "id" : "95",
+        "linkedRelationshipId" : "94",
+        "sourceId" : "15"
+      } ],
+      "tags" : "Element,Software System,external"
+    }, {
+      "containers" : [ {
+        "documentation" : { },
+        "id" : "20",
+        "name" : "Angi Lead Aggregator",
+        "properties" : {
+          "structurizr.dsl.identifier" : "angileads"
+        },
+        "relationships" : [ {
+          "description" : "Creates Leads",
+          "destinationId" : "28",
+          "id" : "101",
+          "sourceId" : "20",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "21",
+        "name" : "Get The Referral",
+        "properties" : {
+          "structurizr.dsl.identifier" : "getthereferral"
+        },
+        "relationships" : [ {
+          "description" : "Creates Leads",
+          "destinationId" : "28",
+          "id" : "103",
+          "sourceId" : "21",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "22",
+        "name" : "Yelp",
+        "properties" : {
+          "structurizr.dsl.identifier" : "yelp"
+        },
+        "relationships" : [ {
+          "description" : "Creates Leads",
+          "destinationId" : "28",
+          "id" : "104",
+          "sourceId" : "22",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "23",
+        "name" : "Angi Ads",
+        "properties" : {
+          "structurizr.dsl.identifier" : "angiads"
+        },
+        "relationships" : [ {
+          "description" : "Creates Leads",
+          "destinationId" : "28",
+          "id" : "105",
+          "sourceId" : "23",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "24",
+        "name" : "Thumbtack",
+        "properties" : {
+          "structurizr.dsl.identifier" : "thumbtack"
+        },
+        "relationships" : [ {
+          "description" : "Creates Leads",
+          "destinationId" : "28",
+          "id" : "106",
+          "sourceId" : "24",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "25",
+        "name" : "Google",
+        "properties" : {
+          "structurizr.dsl.identifier" : "google"
+        },
+        "relationships" : [ {
+          "description" : "Creates Leads",
+          "destinationId" : "28",
+          "id" : "107",
+          "sourceId" : "25",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "26",
+        "name" : "Meta",
+        "properties" : {
+          "structurizr.dsl.identifier" : "meta"
+        },
+        "relationships" : [ {
+          "description" : "Creates Leads",
+          "destinationId" : "28",
+          "id" : "108",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "documentation" : { },
+        "id" : "27",
+        "name" : "Networx",
+        "properties" : {
+          "structurizr.dsl.identifier" : "networx"
+        },
+        "relationships" : [ {
+          "description" : "Creates Leads",
+          "destinationId" : "28",
+          "id" : "109",
+          "sourceId" : "27",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      } ],
+      "description" : "Several external systems that collect leads",
+      "documentation" : { },
+      "id" : "19",
+      "location" : "Unspecified",
+      "name" : "Lead Aggregators",
+      "properties" : {
+        "structurizr.dsl.identifier" : "leadaggregators"
+      },
+      "relationships" : [ {
+        "description" : "Creates Leads",
+        "destinationId" : "28",
+        "id" : "102",
+        "linkedRelationshipId" : "101",
+        "sourceId" : "19"
+      } ],
+      "tags" : "Element,Software System,external"
+    }, {
+      "containers" : [ {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "30",
+          "name" : "Opportunity Record Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "salesopportunityrecordpage"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "31",
+          "name" : "Availibility Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "salesavailabilitypage"
+          },
+          "relationships" : [ {
+            "description" : "Sets availability",
+            "destinationId" : "55",
+            "id" : "124",
+            "sourceId" : "31",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sets availability",
+            "destinationId" : "53",
+            "id" : "125",
+            "linkedRelationshipId" : "124",
+            "sourceId" : "31"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "32",
+          "name" : "Contact Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "salescontactpage"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "33",
+          "name" : "Account Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "salesaccountpage"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "34",
+          "name" : "Estimate Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "salesestimatepage"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "35",
+          "name" : "Project Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "salesprojectpage"
+          },
+          "relationships" : [ {
+            "description" : "Calculates Commissions",
+            "destinationId" : "50",
+            "id" : "128",
+            "sourceId" : "35",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "[Standard]",
+        "documentation" : { },
+        "id" : "29",
+        "name" : "Sales App",
+        "properties" : {
+          "structurizr.dsl.identifier" : "salesapp"
+        },
+        "relationships" : [ {
+          "description" : "Sets availability",
+          "destinationId" : "55",
+          "id" : "126",
+          "linkedRelationshipId" : "124",
+          "sourceId" : "29"
+        }, {
+          "description" : "Sets availability",
+          "destinationId" : "53",
+          "id" : "127",
+          "linkedRelationshipId" : "124",
+          "sourceId" : "29"
+        }, {
+          "description" : "Calculates Commissions",
+          "destinationId" : "50",
+          "id" : "129",
+          "linkedRelationshipId" : "128",
+          "sourceId" : "29"
+        }, {
+          "description" : "Has",
+          "destinationId" : "79",
+          "id" : "135",
+          "sourceId" : "29",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Has",
+          "destinationId" : "76",
+          "id" : "136",
+          "linkedRelationshipId" : "135",
+          "sourceId" : "29"
+        }, {
+          "description" : "Has",
+          "destinationId" : "80",
+          "id" : "144",
+          "sourceId" : "29",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "37",
+          "name" : "Availibility Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "productionavailabilitypage"
+          },
+          "relationships" : [ {
+            "description" : "Sets availability",
+            "destinationId" : "56",
+            "id" : "120",
+            "sourceId" : "37",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Sets availability",
+            "destinationId" : "53",
+            "id" : "121",
+            "linkedRelationshipId" : "120",
+            "sourceId" : "37"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "38",
+          "name" : "Project Scheduling",
+          "properties" : {
+            "structurizr.dsl.identifier" : "projectscheduling"
+          },
+          "tags" : "Element,Component"
+        } ],
+        "description" : "[Standard]",
+        "documentation" : { },
+        "id" : "36",
+        "name" : "Production App",
+        "properties" : {
+          "structurizr.dsl.identifier" : "productionapp"
+        },
+        "relationships" : [ {
+          "description" : "Sets availability",
+          "destinationId" : "56",
+          "id" : "122",
+          "linkedRelationshipId" : "120",
+          "sourceId" : "36"
+        }, {
+          "description" : "Sets availability",
+          "destinationId" : "53",
+          "id" : "123",
+          "linkedRelationshipId" : "120",
+          "sourceId" : "36"
+        }, {
+          "description" : "Has",
+          "destinationId" : "81",
+          "id" : "139",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Has",
+          "destinationId" : "76",
+          "id" : "140",
+          "linkedRelationshipId" : "139",
+          "sourceId" : "36"
+        }, {
+          "description" : "Has",
+          "destinationId" : "82",
+          "id" : "146",
+          "sourceId" : "36",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "40",
+          "name" : "Appointment Scheduling",
+          "properties" : {
+            "structurizr.dsl.identifier" : "appointmentscheduling"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "41",
+          "name" : "Lead Record Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "callcenterleadrecordpage"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "42",
+          "name" : "Omnichannel",
+          "properties" : {
+            "structurizr.dsl.identifier" : "omnichannel"
+          },
+          "relationships" : [ {
+            "description" : "Notifies for new Leads",
+            "destinationId" : "3",
+            "id" : "150",
+            "sourceId" : "42",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "43",
+          "name" : "Ring Central Salesforce Package",
+          "properties" : {
+            "structurizr.dsl.identifier" : "ringcentralsalesforcepackage"
+          },
+          "relationships" : [ {
+            "description" : "Calls Leads",
+            "destinationId" : "12",
+            "id" : "117",
+            "sourceId" : "43",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "description" : "[Console]",
+        "documentation" : { },
+        "id" : "39",
+        "name" : "Call Center App",
+        "properties" : {
+          "structurizr.dsl.identifier" : "callcenterapp"
+        },
+        "relationships" : [ {
+          "description" : "Calls Leads",
+          "destinationId" : "12",
+          "id" : "118",
+          "linkedRelationshipId" : "117",
+          "sourceId" : "39"
+        }, {
+          "description" : "Notifies for new Leads",
+          "destinationId" : "3",
+          "id" : "151",
+          "linkedRelationshipId" : "150",
+          "sourceId" : "39"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "45",
+          "name" : "Opportunity Record Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "canvasseropportunityrecordpage"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "46",
+          "name" : "Lead Record Page",
+          "properties" : {
+            "structurizr.dsl.identifier" : "canvasserleadrecordpage"
+          },
+          "tags" : "Element,Component"
+        } ],
+        "description" : "[Standard]",
+        "documentation" : { },
+        "id" : "44",
+        "name" : "Canvasser App",
+        "properties" : {
+          "structurizr.dsl.identifier" : "canvasserapp"
+        },
+        "relationships" : [ {
+          "description" : "Has",
+          "destinationId" : "77",
+          "id" : "137",
+          "sourceId" : "44",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Has",
+          "destinationId" : "76",
+          "id" : "138",
+          "linkedRelationshipId" : "137",
+          "sourceId" : "44"
+        }, {
+          "description" : "Has",
+          "destinationId" : "78",
+          "id" : "145",
+          "sourceId" : "44",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "48",
+          "name" : "Dispatcher Console",
+          "properties" : {
+            "structurizr.dsl.identifier" : "dispatcherconsole"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "49",
+          "name" : "Field Service Mobile",
+          "properties" : {
+            "structurizr.dsl.identifier" : "fieldservicemobile"
+          },
+          "tags" : "Element,Component"
+        } ],
+        "description" : "[Standard]",
+        "documentation" : { },
+        "id" : "47",
+        "name" : "Field Service App",
+        "properties" : {
+          "structurizr.dsl.identifier" : "fieldservice"
+        },
+        "relationships" : [ {
+          "description" : "Has",
+          "destinationId" : "82",
+          "id" : "141",
+          "sourceId" : "47",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Has",
+          "destinationId" : "76",
+          "id" : "142",
+          "linkedRelationshipId" : "141",
+          "sourceId" : "47"
+        }, {
+          "description" : "Has",
+          "destinationId" : "83",
+          "id" : "143",
+          "sourceId" : "47",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "description" : "Calculates commissions based on opportunity amount, people associated, and other factors",
+          "documentation" : { },
+          "id" : "51",
+          "name" : "Commissions Calculation Autolaunched Flow",
+          "properties" : {
+            "structurizr.dsl.identifier" : "commissionscalculationautolaunchedflow"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Triggers commissions calculation when a project is moved to 'Ready for Production'",
+          "documentation" : { },
+          "id" : "52",
+          "name" : "Commissions Project Triggered Flow",
+          "properties" : {
+            "structurizr.dsl.identifier" : "commissionsprojecttriggeredflow"
+          },
+          "relationships" : [ {
+            "description" : "Uses to calculate commissions",
+            "destinationId" : "51",
+            "id" : "180",
+            "sourceId" : "52",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        } ],
+        "documentation" : { },
+        "id" : "50",
+        "name" : "Commission Calculation Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "commissioncalculationservice"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "description" : "Allows users with proper permissions to view and set all availabilities",
+          "documentation" : { },
+          "id" : "54",
+          "name" : "Availability Manager View",
+          "properties" : {
+            "structurizr.dsl.identifier" : "availabilitymanagerview"
+          },
+          "relationships" : [ {
+            "description" : "Creates Shifts",
+            "destinationId" : "58",
+            "id" : "132",
+            "sourceId" : "54",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Allows sales people to view and set their own availabilities",
+          "documentation" : { },
+          "id" : "55",
+          "name" : "Availability Sales View",
+          "properties" : {
+            "structurizr.dsl.identifier" : "availabilitysalesview"
+          },
+          "relationships" : [ {
+            "description" : "Creates Shifts",
+            "destinationId" : "58",
+            "id" : "133",
+            "sourceId" : "55",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Allows crew leads to view and set their own availabilities",
+          "documentation" : { },
+          "id" : "56",
+          "name" : "Availability Crew View",
+          "properties" : {
+            "structurizr.dsl.identifier" : "availabilitycrewview"
+          },
+          "relationships" : [ {
+            "description" : "Creates Shifts",
+            "destinationId" : "58",
+            "id" : "134",
+            "sourceId" : "56",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Allows certain time periods to be blocked",
+          "documentation" : { },
+          "id" : "57",
+          "name" : "Availability Calendar Blocking",
+          "properties" : {
+            "structurizr.dsl.identifier" : "availabilitycalendarblocking"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Creates shift records behind the scenes",
+          "documentation" : { },
+          "id" : "58",
+          "name" : "Availability Shift Creation",
+          "properties" : {
+            "structurizr.dsl.identifier" : "availabilityshiftcreation"
+          },
+          "tags" : "Element,Component"
+        } ],
+        "description" : "LWC on a custom tab",
+        "documentation" : { },
+        "id" : "53",
+        "name" : "Availability Service",
+        "properties" : {
+          "structurizr.dsl.identifier" : "availabilityservice"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "60",
+          "name" : "New Lead",
+          "properties" : {
+            "structurizr.dsl.identifier" : "newlead"
+          },
+          "relationships" : [ {
+            "description" : "Appointment is Set",
+            "destinationId" : "61",
+            "id" : "193",
+            "sourceId" : "60",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "61",
+          "name" : "Set Lead",
+          "properties" : {
+            "structurizr.dsl.identifier" : "setlead"
+          },
+          "relationships" : [ {
+            "description" : "Appointment is Verified",
+            "destinationId" : "62",
+            "id" : "194",
+            "sourceId" : "61",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "62",
+          "name" : "Verified Lead",
+          "properties" : {
+            "structurizr.dsl.identifier" : "verifiedlead"
+          },
+          "relationships" : [ {
+            "description" : "Appointment is Confirmed",
+            "destinationId" : "63",
+            "id" : "195",
+            "sourceId" : "62",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "63",
+          "name" : "Confirmed Lead",
+          "properties" : {
+            "structurizr.dsl.identifier" : "confirmedlead"
+          },
+          "relationships" : [ {
+            "description" : "Converts",
+            "destinationId" : "64",
+            "id" : "196",
+            "sourceId" : "63",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Converts",
+            "destinationId" : "65",
+            "id" : "197",
+            "sourceId" : "63",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Converts",
+            "destinationId" : "66",
+            "id" : "198",
+            "sourceId" : "63",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "64",
+          "name" : "Opportunities",
+          "properties" : {
+            "structurizr.dsl.identifier" : "opportunities"
+          },
+          "relationships" : [ {
+            "description" : "Creates",
+            "destinationId" : "68",
+            "id" : "199",
+            "sourceId" : "64",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "65",
+          "name" : "Accounts",
+          "properties" : {
+            "structurizr.dsl.identifier" : "accounts"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "66",
+          "name" : "Contacts",
+          "properties" : {
+            "structurizr.dsl.identifier" : "contacts"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "67",
+          "name" : "Estimates",
+          "properties" : {
+            "structurizr.dsl.identifier" : "estimates"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "68",
+          "name" : "Projects",
+          "properties" : {
+            "structurizr.dsl.identifier" : "projects"
+          },
+          "relationships" : [ {
+            "description" : "Won",
+            "destinationId" : "74",
+            "id" : "217",
+            "sourceId" : "68",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "69",
+          "name" : "Service Appointments",
+          "properties" : {
+            "structurizr.dsl.identifier" : "serviceappointments"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "70",
+          "name" : "Shifts",
+          "properties" : {
+            "structurizr.dsl.identifier" : "shifts"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "71",
+          "name" : "Confirmed Opportunity",
+          "properties" : {
+            "structurizr.dsl.identifier" : "confirmedopportunity"
+          },
+          "relationships" : [ {
+            "description" : "Automatically Creates",
+            "destinationId" : "10",
+            "id" : "200",
+            "sourceId" : "71",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Automatically Creates",
+            "destinationId" : "9",
+            "id" : "201",
+            "linkedRelationshipId" : "200",
+            "sourceId" : "71"
+          }, {
+            "description" : "Appointment Issued to Sales Person",
+            "destinationId" : "72",
+            "id" : "205",
+            "sourceId" : "71",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "72",
+          "name" : "Issued Opportunity",
+          "properties" : {
+            "structurizr.dsl.identifier" : "issuedopportunity"
+          },
+          "relationships" : [ {
+            "description" : "Sold",
+            "destinationId" : "73",
+            "id" : "206",
+            "sourceId" : "72",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "73",
+          "name" : "Sold Opportunity",
+          "properties" : {
+            "structurizr.dsl.identifier" : "soldopportunity"
+          },
+          "relationships" : [ {
+            "description" : "Manually create projects (required step)",
+            "destinationId" : "68",
+            "id" : "216",
+            "sourceId" : "73",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "74",
+          "name" : "Closed Won Opportunity",
+          "properties" : {
+            "structurizr.dsl.identifier" : "closedwonopportunity"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "75",
+          "name" : "Closed List Opportunity",
+          "properties" : {
+            "structurizr.dsl.identifier" : "closedlistopportunity"
+          },
+          "tags" : "Element,Component"
+        } ],
+        "documentation" : { },
+        "id" : "59",
+        "name" : "Process Maps",
+        "properties" : {
+          "structurizr.dsl.identifier" : "processmaps"
+        },
+        "relationships" : [ {
+          "description" : "Automatically Creates",
+          "destinationId" : "10",
+          "id" : "202",
+          "linkedRelationshipId" : "200",
+          "sourceId" : "59"
+        }, {
+          "description" : "Automatically Creates",
+          "destinationId" : "9",
+          "id" : "203",
+          "linkedRelationshipId" : "200",
+          "sourceId" : "59"
+        } ],
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "77",
+          "name" : "Individual Canvasser Dashboard",
+          "properties" : {
+            "structurizr.dsl.identifier" : "individualcanvasserdahsboard"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "78",
+          "name" : "Manager Canvasser Dashboard",
+          "properties" : {
+            "structurizr.dsl.identifier" : "managercanvasserdashboard"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "79",
+          "name" : "Individual Sales Dashboard",
+          "properties" : {
+            "structurizr.dsl.identifier" : "individualsalesdashboard"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "80",
+          "name" : "Manager Sales Dashboard",
+          "properties" : {
+            "structurizr.dsl.identifier" : "managersalesdashboard"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "81",
+          "name" : "Individual Project Manager Dashboard",
+          "properties" : {
+            "structurizr.dsl.identifier" : "individualprojectmanagerdashboard"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "82",
+          "name" : "Project Manager Dashboard",
+          "properties" : {
+            "structurizr.dsl.identifier" : "managerprojectmanagerdashboard"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "83",
+          "name" : "Individual Dispatcher Dashboard",
+          "properties" : {
+            "structurizr.dsl.identifier" : "individualdispatcherdashboard"
+          },
+          "tags" : "Element,Component"
+        } ],
+        "documentation" : { },
+        "id" : "76",
+        "name" : "Reports/Dashboards",
+        "properties" : {
+          "structurizr.dsl.identifier" : "reports"
+        },
+        "tags" : "Element,Container"
+      }, {
+        "components" : [ {
+          "documentation" : { },
+          "id" : "85",
+          "name" : "Sales",
+          "properties" : {
+            "structurizr.dsl.identifier" : "salespermissionset"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "86",
+          "name" : "Manager",
+          "properties" : {
+            "structurizr.dsl.identifier" : "managerpermissionset"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "87",
+          "name" : "Canvasser",
+          "properties" : {
+            "structurizr.dsl.identifier" : "canvasserpermissionset"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "88",
+          "name" : "Dispatcher",
+          "properties" : {
+            "structurizr.dsl.identifier" : "dispatcherpermissionset"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "89",
+          "name" : "Accounting",
+          "properties" : {
+            "structurizr.dsl.identifier" : "accountingpermissionset"
+          },
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "90",
+          "name" : "Project Manager",
+          "properties" : {
+            "structurizr.dsl.identifier" : "projectmanagerpermissionset"
+          },
+          "tags" : "Element,Component"
+        } ],
+        "documentation" : { },
+        "id" : "84",
+        "name" : "Permission Set Groups",
+        "properties" : {
+          "structurizr.dsl.identifier" : "permissionsets"
+        },
+        "tags" : "Element,Container"
+      } ],
+      "description" : "Salesforce CRM",
+      "documentation" : { },
+      "id" : "28",
+      "location" : "Unspecified",
+      "name" : "Salesforce",
+      "properties" : {
+        "structurizr.dsl.identifier" : "salesforce"
+      },
+      "relationships" : [ {
+        "description" : "Creates Jobs",
+        "destinationId" : "9",
+        "id" : "91",
+        "sourceId" : "28",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Reads Payments/Invoices",
+        "destinationId" : "15",
+        "id" : "93",
+        "sourceId" : "28",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Calls Leads",
+        "destinationId" : "12",
+        "id" : "119",
+        "linkedRelationshipId" : "117",
+        "sourceId" : "28"
+      }, {
+        "description" : "Notifies for new Leads",
+        "destinationId" : "3",
+        "id" : "152",
+        "linkedRelationshipId" : "150",
+        "sourceId" : "28"
+      }, {
+        "description" : "Automatically Creates",
+        "destinationId" : "10",
+        "id" : "204",
+        "linkedRelationshipId" : "200",
+        "sourceId" : "28"
+      } ],
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Stellar Roofing",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlICJTdGVsbGFyIFJvb2ZpbmciICJTeXN0ZW0gRGlhZ3JhbSBmb3IgU3RlbGxhciBSb29maW5nIFNhbGVzZm9yY2UiIHsKICAgIG1vZGVsIHsKICAgICAgICAjIEFjdG9ycwogICAgICAgIHNhbGVzVXNlciA9IHBlcnNvbiAiU2FsZXMiCiAgICAgICAgbWFuYWdlclVzZXIgPSBwZXJzb24gIk1hbmFnZXIiCiAgICAgICAgY2FsbENlbnRlclVzZXIgPSBwZXJzb24gIkNhbGwgQ2VudGVyIgogICAgICAgIGNhbnZhc3NlclVzZXIgPSBwZXJzb24gIkNhbnZhc3NlciIKICAgICAgICBhZG1pblVzZXIgPSBwZXJzb24gIkFkbWluIgogICAgICAgIGFjY291bnRpbmdVc2VyID0gcGVyc29uICJBY2NvdW50aW5nIgogICAgICAgIHByb2plY3RNYW5hZ2VyVXNlciA9IHBlcnNvbiAiUHJvamVjdCBNYW5hZ2VyIgogICAgICAgIGRpc3BhdGNoZXJVc2VyID0gcGVyc29uICJEaXNwYXRjaGVyIgoKICAgICAgICAjIEV4dGVybmFsIFN5c3RlbXMKICAgICAgICBvbmVDbGlja0NvbnRyYWN0b3IgPSBzb2Z0d2FyZVN5c3RlbSAiT25lIENsaWNrIENvbnRyYWN0b3IiICJRdW90aW5nIFNvZnR3YXJlIiAiZXh0ZXJuYWwiewogICAgICAgICAgICBvbmVDbGlja0NvbnRyYWN0b3JKb2JzID0gY29udGFpbmVyICJKb2JzIgogICAgICAgICAgICBvbmVDbGlja0NvbnRyYWN0b3JFc3RpbWF0ZXMgPSBjb250YWluZXIgIkVzdGltYXRlcyIKICAgICAgICB9CiAgICAgICAgcmluZ0NlbnRyYWwgPSBzb2Z0d2FyZVN5c3RlbSAiUmluZyBDZW50cmFsIiAiVGVsZXBob255IFNvZnR3YXJlIiAiZXh0ZXJuYWwiCiAgICAgICAgY29tcGFueUNhbSA9IHNvZnR3YXJlU3lzdGVtICJDb21wYW55Q2FtIiAiUHJvamVjdCBNYW5hZ2VtZW50L1Bob3RvIFN0b3JhZ2UiICJleHRlcm5hbCIKICAgICAgICBSb29mciA9IHNvZnR3YXJlU3lzdGVtICJSb29mciIgIk1lYXN1cmVtZW50IFJlcG9ydGluZyBTb2Z0d2FyZSIgImV4dGVybmFsIgogICAgICAgIHF1aWNrQm9va3MgPSBzb2Z0d2FyZVN5c3RlbSAiUXVpY2tCb29rcyIgIkFjY291bnRpbmcgU29mdHdhcmUiICJleHRlcm5hbCJ7CiAgICAgICAgICAgIHF1aWNrQm9va3NJbnZvaWNlcyA9IGNvbnRhaW5lciAiSW52b2ljZXMiCiAgICAgICAgICAgIHF1aWNrQm9va3NQYXltZW50cyA9IGNvbnRhaW5lciAiUGF5bWVudHMiCiAgICAgICAgICAgIHF1aWNrQm9va3NDdXN0b21lciA9IGNvbnRhaW5lciAiQ3VzdG9tZXJzIgogICAgICAgIH0KICAgICAgICBsZWFkQWdncmVnYXRvcnMgPSBzb2Z0d2FyZVN5c3RlbSAiTGVhZCBBZ2dyZWdhdG9ycyIgIlNldmVyYWwgZXh0ZXJuYWwgc3lzdGVtcyB0aGF0IGNvbGxlY3QgbGVhZHMiICJleHRlcm5hbCJ7CiAgICAgICAgICAgIGFuZ2lMZWFkcyA9IGNvbnRhaW5lciAiQW5naSBMZWFkIEFnZ3JlZ2F0b3IiCiAgICAgICAgICAgIGdldFRoZVJlZmVycmFsID0gY29udGFpbmVyICJHZXQgVGhlIFJlZmVycmFsIgogICAgICAgICAgICB5ZWxwID0gY29udGFpbmVyICJZZWxwIgogICAgICAgICAgICBhbmdpQWRzID0gY29udGFpbmVyICJBbmdpIEFkcyIKICAgICAgICAgICAgdGh1bWJ0YWNrID0gY29udGFpbmVyICJUaHVtYnRhY2siCiAgICAgICAgICAgIGdvb2dsZSA9IGNvbnRhaW5lciAiR29vZ2xlIgogICAgICAgICAgICBtZXRhID0gY29udGFpbmVyICJNZXRhIgogICAgICAgICAgICBuZXR3b3J4ID0gY29udGFpbmVyICJOZXR3b3J4IgogICAgICAgIH0KCiAgICAgICAgIyBJbnRlcm5hbCBTeXN0ZW0KICAgICAgICBzYWxlc2ZvcmNlID0gc29mdHdhcmVTeXN0ZW0gIlNhbGVzZm9yY2UiICJTYWxlc2ZvcmNlIENSTSIgewogICAgICAgICAgICBzYWxlc0FwcCA9IGNvbnRhaW5lciAiU2FsZXMgQXBwIiAiW1N0YW5kYXJkXSIgewogICAgICAgICAgICAgICAgc2FsZXNPcHBvcnR1bml0eVJlY29yZFBhZ2UgPSBjb21wb25lbnQgIk9wcG9ydHVuaXR5IFJlY29yZCBQYWdlIgogICAgICAgICAgICAgICAgc2FsZXNBdmFpbGFiaWxpdHlQYWdlID0gY29tcG9uZW50ICJBdmFpbGliaWxpdHkgUGFnZSIKICAgICAgICAgICAgICAgIHNhbGVzQ29udGFjdFBhZ2UgPSBjb21wb25lbnQgIkNvbnRhY3QgUGFnZSIKICAgICAgICAgICAgICAgIHNhbGVzQWNjb3VudFBhZ2UgPSBjb21wb25lbnQgIkFjY291bnQgUGFnZSIKICAgICAgICAgICAgICAgIHNhbGVzRXN0aW1hdGVQYWdlID0gY29tcG9uZW50ICJFc3RpbWF0ZSBQYWdlIgogICAgICAgICAgICAgICAgc2FsZXNQcm9qZWN0UGFnZSA9IGNvbXBvbmVudCAiUHJvamVjdCBQYWdlIgogICAgICAgICAgICB9CiAgICAgICAgICAgIHByb2R1Y3Rpb25BcHAgPSBjb250YWluZXIgIlByb2R1Y3Rpb24gQXBwIiAiW1N0YW5kYXJkXSIgewogICAgICAgICAgICAgICAgcHJvZHVjdGlvbkF2YWlsYWJpbGl0eVBhZ2UgPSBjb21wb25lbnQgIkF2YWlsaWJpbGl0eSBQYWdlIgogICAgICAgICAgICAgICAgcHJvamVjdFNjaGVkdWxpbmcgPSBjb21wb25lbnQgIlByb2plY3QgU2NoZWR1bGluZyIKICAgICAgICAgICAgfQogICAgICAgICAgICBjYWxsQ2VudGVyQXBwID0gY29udGFpbmVyICJDYWxsIENlbnRlciBBcHAiICJbQ29uc29sZV0iewogICAgICAgICAgICAgICAgYXBwb2ludG1lbnRTY2hlZHVsaW5nID0gY29tcG9uZW50ICJBcHBvaW50bWVudCBTY2hlZHVsaW5nIgogICAgICAgICAgICAgICAgY2FsbENlbnRlckxlYWRSZWNvcmRQYWdlID0gY29tcG9uZW50ICJMZWFkIFJlY29yZCBQYWdlIgogICAgICAgICAgICAgICAgb21uaWNoYW5uZWwgPSBjb21wb25lbnQgIk9tbmljaGFubmVsIgogICAgICAgICAgICAgICAgcmluZ0NlbnRyYWxTYWxlc2ZvcmNlUGFja2FnZSA9IGNvbXBvbmVudCAiUmluZyBDZW50cmFsIFNhbGVzZm9yY2UgUGFja2FnZSIKICAgICAgICAgICAgfQogICAgICAgICAgICBjYW52YXNzZXJBcHAgPSBjb250YWluZXIgIkNhbnZhc3NlciBBcHAiICJbU3RhbmRhcmRdInsKICAgICAgICAgICAgICAgIGNhbnZhc3Nlck9wcG9ydHVuaXR5UmVjb3JkUGFnZSA9IGNvbXBvbmVudCAiT3Bwb3J0dW5pdHkgUmVjb3JkIFBhZ2UiCiAgICAgICAgICAgICAgICBjYW52YXNzZXJMZWFkUmVjb3JkUGFnZSA9IGNvbXBvbmVudCAiTGVhZCBSZWNvcmQgUGFnZSIKICAgICAgICAgICAgfQogICAgICAgICAgICBmaWVsZFNlcnZpY2UgPSBjb250YWluZXIgIkZpZWxkIFNlcnZpY2UgQXBwIiAiW1N0YW5kYXJkXSJ7CiAgICAgICAgICAgICAgICBkaXNwYXRjaGVyQ29uc29sZSA9IGNvbXBvbmVudCAiRGlzcGF0Y2hlciBDb25zb2xlIgogICAgICAgICAgICAgICAgZmllbGRTZXJ2aWNlTW9iaWxlID0gY29tcG9uZW50ICJGaWVsZCBTZXJ2aWNlIE1vYmlsZSIKICAgICAgICAgICAgfQogICAgICAgICAgICBjb21taXNzaW9uQ2FsY3VsYXRpb25TZXJ2aWNlID0gY29udGFpbmVyICJDb21taXNzaW9uIENhbGN1bGF0aW9uIFNlcnZpY2UiIHsKICAgICAgICAgICAgICAgIGNvbW1pc3Npb25zQ2FsY3VsYXRpb25BdXRvbGF1bmNoZWRGbG93ID0gY29tcG9uZW50ICJDb21taXNzaW9ucyBDYWxjdWxhdGlvbiBBdXRvbGF1bmNoZWQgRmxvdyIgIkNhbGN1bGF0ZXMgY29tbWlzc2lvbnMgYmFzZWQgb24gb3Bwb3J0dW5pdHkgYW1vdW50LCBwZW9wbGUgYXNzb2NpYXRlZCwgYW5kIG90aGVyIGZhY3RvcnMiCiAgICAgICAgICAgICAgICBjb21taXNzaW9uc1Byb2plY3RUcmlnZ2VyZWRGbG93ID0gY29tcG9uZW50ICJDb21taXNzaW9ucyBQcm9qZWN0IFRyaWdnZXJlZCBGbG93IiAiVHJpZ2dlcnMgY29tbWlzc2lvbnMgY2FsY3VsYXRpb24gd2hlbiBhIHByb2plY3QgaXMgbW92ZWQgdG8gJ1JlYWR5IGZvciBQcm9kdWN0aW9uJyIKICAgICAgICAgICAgfQogICAgICAgICAgICBhdmFpbGFiaWxpdHlTZXJ2aWNlID0gY29udGFpbmVyICJBdmFpbGFiaWxpdHkgU2VydmljZSIgIkxXQyBvbiBhIGN1c3RvbSB0YWIiewogICAgICAgICAgICAgICAgYXZhaWxhYmlsaXR5TWFuYWdlclZpZXcgPSBjb21wb25lbnQgIkF2YWlsYWJpbGl0eSBNYW5hZ2VyIFZpZXciICJBbGxvd3MgdXNlcnMgd2l0aCBwcm9wZXIgcGVybWlzc2lvbnMgdG8gdmlldyBhbmQgc2V0IGFsbCBhdmFpbGFiaWxpdGllcyIKICAgICAgICAgICAgICAgIGF2YWlsYWJpbGl0eVNhbGVzVmlldyA9IGNvbXBvbmVudCAiQXZhaWxhYmlsaXR5IFNhbGVzIFZpZXciICJBbGxvd3Mgc2FsZXMgcGVvcGxlIHRvIHZpZXcgYW5kIHNldCB0aGVpciBvd24gYXZhaWxhYmlsaXRpZXMiCiAgICAgICAgICAgICAgICBhdmFpbGFiaWxpdHlDcmV3VmlldyA9IGNvbXBvbmVudCAiQXZhaWxhYmlsaXR5IENyZXcgVmlldyIgIkFsbG93cyBjcmV3IGxlYWRzIHRvIHZpZXcgYW5kIHNldCB0aGVpciBvd24gYXZhaWxhYmlsaXRpZXMiCiAgICAgICAgICAgICAgICBhdmFpbGFiaWxpdHlDYWxlbmRhckJsb2NraW5nID0gY29tcG9uZW50ICJBdmFpbGFiaWxpdHkgQ2FsZW5kYXIgQmxvY2tpbmciICJBbGxvd3MgY2VydGFpbiB0aW1lIHBlcmlvZHMgdG8gYmUgYmxvY2tlZCIKICAgICAgICAgICAgICAgIGF2YWlsYWJpbGl0eVNoaWZ0Q3JlYXRpb24gPSBjb21wb25lbnQgIkF2YWlsYWJpbGl0eSBTaGlmdCBDcmVhdGlvbiIgIkNyZWF0ZXMgc2hpZnQgcmVjb3JkcyBiZWhpbmQgdGhlIHNjZW5lcyIKICAgICAgICAgICAgfQogICAgICAgICAgICBwcm9jZXNzTWFwcyA9IGNvbnRhaW5lciAiUHJvY2VzcyBNYXBzInsKICAgICAgICAgICAgICAgIG5ld0xlYWQgPSBjb21wb25lbnQgIk5ldyBMZWFkIgogICAgICAgICAgICAgICAgc2V0TGVhZCA9IGNvbXBvbmVudCAiU2V0IExlYWQiCiAgICAgICAgICAgICAgICB2ZXJpZmllZExlYWQgPSBjb21wb25lbnQgIlZlcmlmaWVkIExlYWQiCiAgICAgICAgICAgICAgICBjb25maXJtZWRMZWFkID0gY29tcG9uZW50ICJDb25maXJtZWQgTGVhZCIKICAgICAgICAgICAgICAgIG9wcG9ydHVuaXRpZXMgPSBjb21wb25lbnQgIk9wcG9ydHVuaXRpZXMiCiAgICAgICAgICAgICAgICBhY2NvdW50cyA9IGNvbXBvbmVudCAiQWNjb3VudHMiCiAgICAgICAgICAgICAgICBjb250YWN0cyA9IGNvbXBvbmVudCAiQ29udGFjdHMiCiAgICAgICAgICAgICAgICBlc3RpbWF0ZXMgPSBjb21wb25lbnQgIkVzdGltYXRlcyIKICAgICAgICAgICAgICAgIHByb2plY3RzID0gY29tcG9uZW50ICJQcm9qZWN0cyIKICAgICAgICAgICAgICAgIHNlcnZpY2VBcHBvaW50bWVudHMgPSBjb21wb25lbnQgIlNlcnZpY2UgQXBwb2ludG1lbnRzIgogICAgICAgICAgICAgICAgc2hpZnRzID0gY29tcG9uZW50ICJTaGlmdHMiCiAgICAgICAgICAgICAgICBjb25maXJtZWRPcHBvcnR1bml0eSA9IGNvbXBvbmVudCAiQ29uZmlybWVkIE9wcG9ydHVuaXR5IgogICAgICAgICAgICAgICAgaXNzdWVkT3Bwb3J0dW5pdHkgPSBjb21wb25lbnQgIklzc3VlZCBPcHBvcnR1bml0eSIKICAgICAgICAgICAgICAgIHNvbGRPcHBvcnR1bml0eSA9IGNvbXBvbmVudCAiU29sZCBPcHBvcnR1bml0eSIKICAgICAgICAgICAgICAgIGNsb3NlZFdvbk9wcG9ydHVuaXR5ID0gY29tcG9uZW50ICJDbG9zZWQgV29uIE9wcG9ydHVuaXR5IgogICAgICAgICAgICAgICAgY2xvc2VkTGlzdE9wcG9ydHVuaXR5ID0gY29tcG9uZW50ICJDbG9zZWQgTGlzdCBPcHBvcnR1bml0eSIKICAgICAgICAgICAgfQogICAgICAgICAgICByZXBvcnRzID0gY29udGFpbmVyICJSZXBvcnRzL0Rhc2hib2FyZHMiIHsKICAgICAgICAgICAgICAgIGluZGl2aWR1YWxDYW52YXNzZXJEYWhzYm9hcmQgPSBjb21wb25lbnQgIkluZGl2aWR1YWwgQ2FudmFzc2VyIERhc2hib2FyZCIKICAgICAgICAgICAgICAgIG1hbmFnZXJDYW52YXNzZXJEYXNoYm9hcmQgPSBjb21wb25lbnQgIk1hbmFnZXIgQ2FudmFzc2VyIERhc2hib2FyZCIKICAgICAgICAgICAgICAgIGluZGl2aWR1YWxTYWxlc0Rhc2hib2FyZCA9IGNvbXBvbmVudCAiSW5kaXZpZHVhbCBTYWxlcyBEYXNoYm9hcmQiCiAgICAgICAgICAgICAgICBtYW5hZ2VyU2FsZXNEYXNoYm9hcmQgPSBjb21wb25lbnQgIk1hbmFnZXIgU2FsZXMgRGFzaGJvYXJkIgogICAgICAgICAgICAgICAgaW5kaXZpZHVhbFByb2plY3RNYW5hZ2VyRGFzaGJvYXJkID0gY29tcG9uZW50ICJJbmRpdmlkdWFsIFByb2plY3QgTWFuYWdlciBEYXNoYm9hcmQiCiAgICAgICAgICAgICAgICBtYW5hZ2VyUHJvamVjdE1hbmFnZXJEYXNoYm9hcmQgPSBjb21wb25lbnQgIlByb2plY3QgTWFuYWdlciBEYXNoYm9hcmQiCiAgICAgICAgICAgICAgICBpbmRpdmlkdWFsRGlzcGF0Y2hlckRhc2hib2FyZCA9IGNvbXBvbmVudCAiSW5kaXZpZHVhbCBEaXNwYXRjaGVyIERhc2hib2FyZCIKICAgICAgICAgICAgfQoKICAgICAgICAgICAgcGVybWlzc2lvblNldHMgPSBjb250YWluZXIgIlBlcm1pc3Npb24gU2V0IEdyb3VwcyIgewogICAgICAgICAgICAgICAgc2FsZXNQZXJtaXNzaW9uU2V0ID0gY29tcG9uZW50ICJTYWxlcyIKICAgICAgICAgICAgICAgIG1hbmFnZXJQZXJtaXNzaW9uU2V0ID0gY29tcG9uZW50ICJNYW5hZ2VyIgogICAgICAgICAgICAgICAgY2FudmFzc2VyUGVybWlzc2lvblNldCA9IGNvbXBvbmVudCAiQ2FudmFzc2VyIgogICAgICAgICAgICAgICAgZGlzcGF0Y2hlclBlcm1pc3Npb25TZXQgPSBjb21wb25lbnQgIkRpc3BhdGNoZXIiCiAgICAgICAgICAgICAgICBhY2NvdW50aW5nUGVybWlzc2lvblNldCA9IGNvbXBvbmVudCAiQWNjb3VudGluZyIKICAgICAgICAgICAgICAgIHByb2plY3RNYW5hZ2VyUGVybWlzc2lvblNldCA9IGNvbXBvbmVudCAiUHJvamVjdCBNYW5hZ2VyIgogICAgICAgICAgICB9CgogICAgICAgIH0KCiAgICAgICAgCiAgICAgICAgIyBTeXN0ZW0tdG8tU3lzdGVtIFJlbGF0aW9uc2hpcHMKICAgICAgICBzYWxlc2ZvcmNlIC0+IG9uZUNsaWNrQ29udHJhY3RvciAiQ3JlYXRlcyBKb2JzIgogICAgICAgIG9uZUNsaWNrQ29udHJhY3RvciAtPiBzYWxlc2ZvcmNlICJDcmVhdGVzIEVzdGltYXRlcyIKICAgICAgICBzYWxlc2ZvcmNlIC0+IHF1aWNrQm9va3MgIlJlYWRzIFBheW1lbnRzL0ludm9pY2VzIgogICAgICAgIHF1aWNrQm9va3NDdXN0b21lciAtPiBzYWxlc2ZvcmNlICIyLXdheSBTeW5jIHRvIEFjY291bnRzIgogICAgICAgIHNhbGVzVXNlciAtPiBvbmVDbGlja0NvbnRyYWN0b3IgIlVzZXMiCiAgICAgICAgc2FsZXNVc2VyIC0+IG9uZUNsaWNrQ29udHJhY3RvckVzdGltYXRlcyAiQ3JlYXRlcyBFc3RpbWF0ZXMiCiAgICAgICAgc2FsZXNVc2VyIC0+IG9uZUNsaWNrQ29udHJhY3RvckpvYnMgIlVzZXMiCiAgICAgICAgcm9vZnIgLT4gb25lQ2xpY2tDb250cmFjdG9yICJTZW5kcyBNZWFzdXJlbWVudCBSZXBvcnRzIgogICAgICAgIGNhbGxDZW50ZXJVc2VyIC0+IHJpbmdDZW50cmFsICJVc2VzIgoKICAgICAgICAjIExlYWQgQWdncmVnYXRvcnMKICAgICAgICBhbmdpTGVhZHMgLT4gc2FsZXNmb3JjZSAiQ3JlYXRlcyBMZWFkcyIKICAgICAgICBnZXRUaGVSZWZlcnJhbCAtPiBzYWxlc2ZvcmNlICJDcmVhdGVzIExlYWRzIgogICAgICAgIHllbHAgLT4gc2FsZXNmb3JjZSAiQ3JlYXRlcyBMZWFkcyIKICAgICAgICBhbmdpQWRzIC0+IHNhbGVzZm9yY2UgIkNyZWF0ZXMgTGVhZHMiCiAgICAgICAgdGh1bWJ0YWNrIC0+IHNhbGVzZm9yY2UgIkNyZWF0ZXMgTGVhZHMiCiAgICAgICAgZ29vZ2xlIC0+IHNhbGVzZm9yY2UgIkNyZWF0ZXMgTGVhZHMiCiAgICAgICAgbWV0YSAtPiBzYWxlc2ZvcmNlICJDcmVhdGVzIExlYWRzIgogICAgICAgIG5ldHdvcnggLT4gc2FsZXNmb3JjZSAiQ3JlYXRlcyBMZWFkcyIKCiAgICAgICAgIyBVc2VyLXRvLVN5c3RlbSBSZWxhdGlvbnNoaXBzCiAgICAgICAgc2FsZXNVc2VyIC0+IHNhbGVzZm9yY2UgIlVzZXMiCiAgICAgICAgY2FsbENlbnRlclVzZXIgLT4gc2FsZXNmb3JjZSAiVXNlcyIKICAgICAgICBjYW52YXNzZXJVc2VyIC0+IHNhbGVzZm9yY2UgIlVzZXMiCiAgICAgICAgYWRtaW5Vc2VyIC0+IHNhbGVzZm9yY2UgIlVzZXMiCiAgICAgICAgYWNjb3VudGluZ1VzZXIgLT4gc2FsZXNmb3JjZSAiVXNlcyIKICAgICAgICBhY2NvdW50aW5nVXNlciAtPiBxdWlja0Jvb2tzICJVc2VzIgogICAgICAgIGRpc3BhdGNoZXJVc2VyIC0+IHNhbGVzZm9yY2UgIlVzZXMiCiAgICAgICAgcmluZ0NlbnRyYWxTYWxlc2ZvcmNlUGFja2FnZSAtPiByaW5nQ2VudHJhbCAiQ2FsbHMgTGVhZHMiCgogICAgICAgICMgQ29udGFpbmVyLXRvLUNvbnRhaW5lciBSZWxhdGlvbnNoaXBzCiAgICAgICAgcHJvZHVjdGlvbkF2YWlsYWJpbGl0eVBhZ2UgLT4gYXZhaWxhYmlsaXR5Q3Jld1ZpZXcgIlNldHMgYXZhaWxhYmlsaXR5IgogICAgICAgIHNhbGVzQXZhaWxhYmlsaXR5UGFnZSAtPiBhdmFpbGFiaWxpdHlTYWxlc1ZpZXcgIlNldHMgYXZhaWxhYmlsaXR5IgogICAgICAgIHNhbGVzUHJvamVjdFBhZ2UgLT4gY29tbWlzc2lvbkNhbGN1bGF0aW9uU2VydmljZSAiQ2FsY3VsYXRlcyBDb21taXNzaW9ucyIKICAgICAgICBtYW5hZ2VyVXNlciAtPiBhdmFpbGFiaWxpdHlTZXJ2aWNlICJWaWV3cyBhbmQgc2V0cyBhbGwgYXZhaWxhYmlsaXR5IgoKICAgICAgICAjIEF2YWlsYWJpbGl0eSBTZXJ2aWNlIFJlbGF0aW9uc2hpcHMKICAgICAgICBhdmFpbGFiaWxpdHlNYW5hZ2VyVmlldyAtPiBhdmFpbGFiaWxpdHlTaGlmdENyZWF0aW9uICJDcmVhdGVzIFNoaWZ0cyIKICAgICAgICBhdmFpbGFiaWxpdHlTYWxlc1ZpZXcgLT4gYXZhaWxhYmlsaXR5U2hpZnRDcmVhdGlvbiAiQ3JlYXRlcyBTaGlmdHMiCiAgICAgICAgYXZhaWxhYmlsaXR5Q3Jld1ZpZXcgLT4gYXZhaWxhYmlsaXR5U2hpZnRDcmVhdGlvbiAiQ3JlYXRlcyBTaGlmdHMiCgoKICAgICAgICAjIERhc2hib2FyZCBSZWxhdGlvbnNoaXBzCiAgICAgICAgc2FsZXNBcHAgLT4gaW5kaXZpZHVhbFNhbGVzRGFzaGJvYXJkICJIYXMiCiAgICAgICAgY2FudmFzc2VyQXBwIC0+IGluZGl2aWR1YWxDYW52YXNzZXJEYWhzYm9hcmQgIkhhcyIKICAgICAgICBwcm9kdWN0aW9uQXBwIC0+IGluZGl2aWR1YWxQcm9qZWN0TWFuYWdlckRhc2hib2FyZCAiSGFzIgogICAgICAgIGZpZWxkU2VydmljZSAtPiBtYW5hZ2VyUHJvamVjdE1hbmFnZXJEYXNoYm9hcmQgIkhhcyIKICAgICAgICBmaWVsZFNlcnZpY2UgLT4gaW5kaXZpZHVhbERpc3BhdGNoZXJEYXNoYm9hcmQgIkhhcyIKICAgICAgICBzYWxlc0FwcCAtPiBtYW5hZ2VyU2FsZXNEYXNoYm9hcmQgIkhhcyIKICAgICAgICBjYW52YXNzZXJBcHAgLT4gbWFuYWdlckNhbnZhc3NlckRhc2hib2FyZCAiSGFzIgogICAgICAgIHByb2R1Y3Rpb25BcHAgLT4gbWFuYWdlclByb2plY3RNYW5hZ2VyRGFzaGJvYXJkICJIYXMiCgogICAgICAgICMgQ2FsbCBDZW50ZXIgVXNlciBSZWxhdGlvbnNoaXBzCiAgICAgICAgY2FsbENlbnRlclVzZXIgLT4gY2FsbENlbnRlckxlYWRSZWNvcmRQYWdlICJEaWFscyBMZWFkcyIKICAgICAgICBjYWxsQ2VudGVyVXNlciAtPiBhcHBvaW50bWVudFNjaGVkdWxpbmcgIlNjaGVkdWxlcyBTYWxlcyBBcHBvaW50bWVudHMiCiAgICAgICAgb21uaUNoYW5uZWwgLT4gY2FsbENlbnRlclVzZXIgIk5vdGlmaWVzIGZvciBuZXcgTGVhZHMiCiAgICAgICAgY2FsbENlbnRlclVzZXIgLT4gcmluZ0NlbnRyYWxTYWxlc2ZvcmNlUGFja2FnZSAiVXNlcyIKCiAgICAgICAgIyBQcm9qZWN0IE1hbmFnZXJVc2VyIFJlbGF0aW9uc2hpcHMKICAgICAgICBwcm9qZWN0TWFuYWdlclVzZXIgLT4gc2FsZXNmb3JjZSAiVXNlcyIKICAgICAgICBwcm9qZWN0TWFuYWdlclVzZXIgLT4gZmllbGRTZXJ2aWNlTW9iaWxlICJVc2VzIgogICAgICAgIHByb2plY3RNYW5hZ2VyVXNlciAtPiBwcm9qZWN0U2NoZWR1bGluZyAiU2NoZWR1bGVzIENyZXdzIgogICAgICAgIHByb2plY3RNYW5hZ2VyVXNlciAtPiBwcm9kdWN0aW9uQXZhaWxhYmlsaXR5UGFnZSAiQ2hlY2tzIEF2YWlsYWJpbGl0aWVzIgoKICAgICAgICAjIE1hbmFnZXIgUmVsYXRpb25zaGlwcwogICAgICAgIG1hbmFnZXJVc2VyIC0+IHNhbGVzQXBwICJWaWV3cyBSZXBvcnRzIgogICAgICAgIG1hbmFnZXJVc2VyIC0+IGNhbnZhc3NlckFwcCAiVmlld3MgUmVwb3J0cyIKICAgICAgICBtYW5hZ2VyVXNlciAtPiBwcm9kdWN0aW9uQXBwICJWaWV3cyBSZXBvcnRzIgoKICAgICAgICAjU2FsZXMgVXNlciBSZWxhdGlvbnNoaXBzCiAgICAgICAgc2FsZXNVc2VyIC0+IHNhbGVzQXZhaWxhYmlsaXR5UGFnZSAiVXNlcyIKICAgICAgICBzYWxlc1VzZXIgLT4gc2FsZXNPcHBvcnR1bml0eVJlY29yZFBhZ2UgIlVzZXMiCiAgICAgICAgc2FsZXNVc2VyIC0+IHNhbGVzQ29udGFjdFBhZ2UgIlVzZXMiCiAgICAgICAgc2FsZXNVc2VyIC0+IHNhbGVzUHJvamVjdFBhZ2UgIlVzZXMiCiAgICAgICAgc2FsZXNVc2VyIC0+IHNhbGVzRXN0aW1hdGVQYWdlICJVc2VzIgogICAgICAgIHNhbGVzVXNlciAtPiBzYWxlc0FjY291bnRQYWdlICJVc2VzIgoKICAgICAgICAjIFVzZXIgUmVsYXRpb25zaGlwcwogICAgICAgIGNhbnZhc3NlclVzZXIgLT4gY2FudmFzc2VyTGVhZFJlY29yZFBhZ2UgIkRpYWxzIExlYWRzIgogICAgICAgIGNhbnZhc3NlclVzZXIgLT4gY2FudmFzc2VyTGVhZFJlY29yZFBhZ2UgIlNjaGVkdWxlcyBBcHBvaW50bWVudHMiCiAgICAgICAgY2FudmFzc2VyVXNlciAtPiBjYW52YXNzZXJPcHBvcnR1bml0eVJlY29yZFBhZ2UgIlZpZXdzIENvbnZlcnRlZCBPcHBvcnR1bml0aWVzIgogICAgICAgIGRpc3BhdGNoZXJVc2VyIC0+IGRpc3BhdGNoZXJDb25zb2xlICJEaXNwYXRjaGVzIHNhbGVzIHBlb3BsZSBhbmQgcHJvZHVjdGlvbiB0ZWFtcyIKICAgICAgICBkaXNwYXRjaGVyVXNlciAtPiBwcm9kdWN0aW9uQXZhaWxhYmlsaXR5UGFnZSAiVmlld3MgYWxsIGF2YWlsYWJpbGl0aWVzIgogICAgICAgIGFjY291bnRpbmdVc2VyIC0+IHF1aWNrQm9va3NJbnZvaWNlcyAiQ3JlYXRlcyBJbnZvaWNlcyIKICAgICAgICBhY2NvdW50aW5nVXNlciAtPiBxdWlja2Jvb2tzUGF5bWVudHMgIlJlY29yZHMgUGF5bWVudHMiCgogICAgICAgICMgQ29tcG9uZW50LXRvLUNvbXBvbmVudCBSZWxhdGlvbnNoaXBzCiAgICAgICAgY29tbWlzc2lvbnNQcm9qZWN0VHJpZ2dlcmVkRmxvdyAtPiBjb21taXNzaW9uc0NhbGN1bGF0aW9uQXV0b2xhdW5jaGVkRmxvdyAiVXNlcyB0byBjYWxjdWxhdGUgY29tbWlzc2lvbnMiCgogICAgICAgICMgUGVybWlzc2lvbiBTZXQgUmVsYXRpb25zaGlwcwogICAgICAgIHNhbGVzVXNlciAtPiBzYWxlc1Blcm1pc3Npb25TZXQgIkhhcyIKICAgICAgICBtYW5hZ2VyVXNlciAtPiBtYW5hZ2VyUGVybWlzc2lvblNldCAiSGFzIgogICAgICAgIGNhbnZhc3NlclVzZXIgLT4gY2FudmFzc2VyUGVybWlzc2lvblNldCAiSGFzIgogICAgICAgIGRpc3BhdGNoZXJVc2VyIC0+IGRpc3BhdGNoZXJQZXJtaXNzaW9uU2V0ICJIYXMiCiAgICAgICAgYWNjb3VudGluZ1VzZXIgLT4gYWNjb3VudGluZ1Blcm1pc3Npb25TZXQgIkhhcyIKICAgICAgICBwcm9qZWN0TWFuYWdlclVzZXIgLT4gcHJvamVjdE1hbmFnZXJQZXJtaXNzaW9uU2V0ICJIYXMiCgogICAgICAgICMgUHJvY2VzcyBNYXAgUmVsYXRpb25zaGlwcwogICAgICAgIG5ld0xlYWQgLT4gc2V0TGVhZCAiQXBwb2ludG1lbnQgaXMgU2V0IgogICAgICAgIHNldExlYWQgLT4gdmVyaWZpZWRMZWFkICJBcHBvaW50bWVudCBpcyBWZXJpZmllZCIKICAgICAgICB2ZXJpZmllZExlYWQgLT4gY29uZmlybWVkTGVhZCAiQXBwb2ludG1lbnQgaXMgQ29uZmlybWVkIgogICAgICAgIGNvbmZpcm1lZExlYWQgLT4gb3Bwb3J0dW5pdGllcyAiQ29udmVydHMiCiAgICAgICAgY29uZmlybWVkTGVhZCAtPiBhY2NvdW50cyAiQ29udmVydHMiCiAgICAgICAgY29uZmlybWVkTGVhZCAtPiBjb250YWN0cyAiQ29udmVydHMiCiAgICAgICAgb3Bwb3J0dW5pdGllcyAtPiBwcm9qZWN0cyAiQ3JlYXRlcyIKICAgICAgICBjb25maXJtZWRPcHBvcnR1bml0eSAtPiBvbmVDbGlja0NvbnRyYWN0b3JKb2JzICJBdXRvbWF0aWNhbGx5IENyZWF0ZXMiCiAgICAgICAgY29uZmlybWVkT3Bwb3J0dW5pdHkgLT4gaXNzdWVkT3Bwb3J0dW5pdHkgIkFwcG9pbnRtZW50IElzc3VlZCB0byBTYWxlcyBQZXJzb24iCiAgICAgICAgaXNzdWVkT3Bwb3J0dW5pdHkgLT4gc29sZE9wcG9ydHVuaXR5ICJTb2xkIgogICAgICAgIG9uZUNsaWNrQ29udHJhY3RvckVzdGltYXRlcyAtPiBpc3N1ZWRPcHBvcnR1bml0eSAiRXN0aW1hdGVzIGFyZSBDcmVhdGVkIgogICAgICAgIG9uZUNsaWNrQ29udHJhY3RvckpvYnMgLT4gc29sZE9wcG9ydHVuaXR5ICJKb2IgaXMgU29sZCIKICAgICAgICBzb2xkT3Bwb3J0dW5pdHkgLT4gcHJvamVjdHMgIk1hbnVhbGx5IGNyZWF0ZSBwcm9qZWN0cyAocmVxdWlyZWQgc3RlcCkiCiAgICAgICAgcHJvamVjdHMgLT4gY2xvc2VkV29uT3Bwb3J0dW5pdHkgIldvbiIKCiAgICB9CiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBzYWxlc2ZvcmNlIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgICAgICBleGNsdWRlIGFjY291bnRpbmdVc2VyLT5xdWlja0Jvb2tzCiAgICAgICAgICAgICAgICBleGNsdWRlIHNhbGVzZm9yY2UtPmNhbGxDZW50ZXJVc2VyCiAgICAgICAgICAgICAgICBhdXRvbGF5b3V0CiAgICAgICAgfQoKICAgICAgICBzeXN0ZW1Db250ZXh0IHF1aWNrQm9va3MgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgICAgIGF1dG9sYXlvdXQKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBvbmVDbGlja0NvbnRyYWN0b3IgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgICAgIGF1dG9sYXlvdXQKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBxdWlja0Jvb2tzIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgICAgICBhdXRvbGF5b3V0CiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgbGVhZEFnZ3JlZ2F0b3JzIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgICAgICBhdXRvbGF5b3V0CiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgc2FsZXNmb3JjZSB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAgICAgZXhjbHVkZSBwcm9jZXNzTWFwcwogICAgICAgICAgICAgICAgYXV0b2xheW91dAogICAgICAgICAgICAgICAgZXhjbHVkZSAqLT5wZXJtaXNzaW9uU2V0cwogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHNhbGVzQXBwIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgICAgICBhdXRvbGF5b3V0CiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgcHJvZHVjdGlvbkFwcCB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAgICAgYXV0b2xheW91dAogICAgICAgIH0KCgogICAgICAgIGNvbXBvbmVudCBjb21taXNzaW9uQ2FsY3VsYXRpb25TZXJ2aWNlIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgICAgICBhdXRvbGF5b3V0CiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgY2FsbENlbnRlckFwcCB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAgICAgYXV0b2xheW91dAogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGNhbnZhc3NlckFwcCB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAgICAgYXV0b2xheW91dAogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGZpZWxkU2VydmljZSB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAgICAgYXV0b2xheW91dAogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGF2YWlsYWJpbGl0eVNlcnZpY2UgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgICAgIGF1dG9sYXlvdXQKICAgICAgICB9CiAgICAgICAgY29tcG9uZW50IHJlcG9ydHMgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgICAgIGF1dG9sYXlvdXQKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBwZXJtaXNzaW9uU2V0cyB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAgICAgYXV0b2xheW91dAogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyBwcm9jZXNzTWFwcyB7CiAgICAgICAgICAgIHRpdGxlICJMZWFkIFByb2Nlc3MiCiAgICAgICAgICAgIGF1dG9sYXlvdXQgbHIKICAgICAgICAgICAgbmV3TGVhZCAtPiBzZXRMZWFkICJBcHBvaW50bWVudCBpcyBTZXQiCiAgICAgICAgICAgIHNldExlYWQgLT4gdmVyaWZpZWRMZWFkICJBcHBvaW50bWVudCBpcyBWZXJpZmllZCIKICAgICAgICAgICAgdmVyaWZpZWRMZWFkIC0+IGNvbmZpcm1lZExlYWQgIkFwcG9pbnRtZW50IGlzIENvbmZpcm1lZCIKICAgICAgICAgICAgY29uZmlybWVkTGVhZCAtPiBvcHBvcnR1bml0aWVzICJDb252ZXJ0cyIKICAgICAgICAgICAgY29uZmlybWVkTGVhZCAtPiBhY2NvdW50cyAiQ29udmVydHMiCiAgICAgICAgICAgIGNvbmZpcm1lZExlYWQgLT4gY29udGFjdHMgIkNvbnZlcnRzIgogICAgICAgICAgICBvcHBvcnR1bml0aWVzIC0+IHByb2plY3RzICJDcmVhdGVzIgogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyBwcm9jZXNzTWFwcyB7CiAgICAgICAgICAgIHRpdGxlICJPcHBvcnR1bml0eSBQcm9jZXNzIgogICAgICAgICAgICBhdXRvbGF5b3V0IGxyCiAgICAgICAgICAgIGNvbmZpcm1lZE9wcG9ydHVuaXR5IC0+IG9uZUNsaWNrQ29udHJhY3RvckpvYnMgIkF1dG9tYXRpY2FsbHkgQ3JlYXRlcyIKICAgICAgICAgICAgY29uZmlybWVkT3Bwb3J0dW5pdHkgLT4gaXNzdWVkT3Bwb3J0dW5pdHkgIkFwcG9pbnRtZW50IElzc3VlZCB0byBTYWxlcyBQZXJzb24iCiAgICAgICAgICAgIG9uZUNsaWNrQ29udHJhY3RvckVzdGltYXRlcyAtPiBpc3N1ZWRPcHBvcnR1bml0eSAiRXN0aW1hdGVzIGFyZSBDcmVhdGVkIgogICAgICAgICAgICBpc3N1ZWRPcHBvcnR1bml0eSAtPiBzb2xkT3Bwb3J0dW5pdHkgIlNvbGQiCiAgICAgICAgICAgIG9uZUNsaWNrQ29udHJhY3RvckpvYnMgLT4gc29sZE9wcG9ydHVuaXR5ICJKb2IgaXMgU29sZCIKICAgICAgICAgICAgc29sZE9wcG9ydHVuaXR5IC0+IHByb2plY3RzICJNYW51YWxseSBjcmVhdGUgcHJvamVjdHMgKHJlcXVpcmVkIHN0ZXApIgogICAgICAgICAgICBwcm9qZWN0cyAtPiBjbG9zZWRXb25PcHBvcnR1bml0eSAiV29uIgogICAgICAgIH0KICAgIH0KfQ=="
+  },
+  "views" : {
+    "componentViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "29",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "30",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "31",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "32",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "33",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "34",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "35",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "50",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "53",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-001",
+      "order" : 7,
+      "relationships" : [ {
+        "id" : "125"
+      }, {
+        "id" : "128"
+      }, {
+        "id" : "163"
+      }, {
+        "id" : "165"
+      }, {
+        "id" : "166"
+      }, {
+        "id" : "167"
+      }, {
+        "id" : "168"
+      }, {
+        "id" : "169"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "36",
+      "elements" : [ {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "37",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "38",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "53",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-002",
+      "order" : 8,
+      "relationships" : [ {
+        "id" : "121"
+      }, {
+        "id" : "157"
+      }, {
+        "id" : "159"
+      }, {
+        "id" : "176"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "50",
+      "elements" : [ {
+        "id" : "51",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "52",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-003",
+      "order" : 9,
+      "relationships" : [ {
+        "id" : "180"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "39",
+      "elements" : [ {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "40",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "41",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "42",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "43",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-004",
+      "order" : 10,
+      "relationships" : [ {
+        "id" : "100"
+      }, {
+        "id" : "117"
+      }, {
+        "id" : "147"
+      }, {
+        "id" : "149"
+      }, {
+        "id" : "150"
+      }, {
+        "id" : "153"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "44",
+      "elements" : [ {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "46",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-005",
+      "order" : 11,
+      "relationships" : [ {
+        "id" : "170"
+      }, {
+        "id" : "172"
+      }, {
+        "id" : "173"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "47",
+      "elements" : [ {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "48",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "49",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-006",
+      "order" : 12,
+      "relationships" : [ {
+        "id" : "155"
+      }, {
+        "id" : "174"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "53",
+      "elements" : [ {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "36",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "54",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "55",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "56",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "57",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "58",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-007",
+      "order" : 13,
+      "relationships" : [ {
+        "id" : "122"
+      }, {
+        "id" : "126"
+      }, {
+        "id" : "132"
+      }, {
+        "id" : "133"
+      }, {
+        "id" : "134"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "76",
+      "elements" : [ {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "36",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "44",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "47",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "77",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "78",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "79",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "80",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "81",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "82",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "83",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-008",
+      "order" : 14,
+      "relationships" : [ {
+        "id" : "135"
+      }, {
+        "id" : "137"
+      }, {
+        "id" : "139"
+      }, {
+        "id" : "141"
+      }, {
+        "id" : "143"
+      }, {
+        "id" : "144"
+      }, {
+        "id" : "145"
+      }, {
+        "id" : "146"
+      } ]
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "containerId" : "84",
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "85",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "86",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "87",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "88",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "89",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "90",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Component-009",
+      "order" : 15,
+      "relationships" : [ {
+        "id" : "181"
+      }, {
+        "id" : "183"
+      }, {
+        "id" : "185"
+      }, {
+        "id" : "187"
+      }, {
+        "id" : "189"
+      }, {
+        "id" : "191"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "styles" : { },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Container-001",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "110"
+      }, {
+        "id" : "204"
+      }, {
+        "id" : "209"
+      }, {
+        "id" : "214"
+      }, {
+        "id" : "97"
+      }, {
+        "id" : "98"
+      } ],
+      "softwareSystemId" : "9"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Container-002",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "114"
+      }, {
+        "id" : "178"
+      }, {
+        "id" : "179"
+      }, {
+        "id" : "94"
+      } ],
+      "softwareSystemId" : "15"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "23",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "24",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "26",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "27",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Container-003",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "101"
+      }, {
+        "id" : "103"
+      }, {
+        "id" : "104"
+      }, {
+        "id" : "105"
+      }, {
+        "id" : "106"
+      }, {
+        "id" : "107"
+      }, {
+        "id" : "108"
+      }, {
+        "id" : "109"
+      } ],
+      "softwareSystemId" : "19"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "29",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "36",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "39",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "44",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "47",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "50",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "53",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "76",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "84",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Container-004",
+      "order" : 6,
+      "relationships" : [ {
+        "id" : "100"
+      }, {
+        "id" : "118"
+      }, {
+        "id" : "123"
+      }, {
+        "id" : "127"
+      }, {
+        "id" : "129"
+      }, {
+        "id" : "130"
+      }, {
+        "id" : "136"
+      }, {
+        "id" : "138"
+      }, {
+        "id" : "140"
+      }, {
+        "id" : "142"
+      }, {
+        "id" : "148"
+      }, {
+        "id" : "151"
+      }, {
+        "id" : "156"
+      }, {
+        "id" : "158"
+      }, {
+        "id" : "160"
+      }, {
+        "id" : "161"
+      }, {
+        "id" : "162"
+      }, {
+        "id" : "164"
+      }, {
+        "id" : "171"
+      }, {
+        "id" : "175"
+      }, {
+        "id" : "177"
+      }, {
+        "id" : "96"
+      } ],
+      "softwareSystemId" : "28"
+    } ],
+    "dynamicViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elementId" : "59",
+      "elements" : [ {
+        "id" : "60",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "61",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "62",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "63",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "64",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "65",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "66",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "68",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-001",
+      "order" : 16,
+      "relationships" : [ {
+        "description" : "Appointment is Set",
+        "id" : "193",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "Appointment is Verified",
+        "id" : "194",
+        "order" : "2",
+        "response" : false
+      }, {
+        "description" : "Appointment is Confirmed",
+        "id" : "195",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "Converts",
+        "id" : "196",
+        "order" : "4",
+        "response" : false
+      }, {
+        "description" : "Converts",
+        "id" : "197",
+        "order" : "5",
+        "response" : false
+      }, {
+        "description" : "Converts",
+        "id" : "198",
+        "order" : "6",
+        "response" : false
+      }, {
+        "description" : "Creates",
+        "id" : "199",
+        "order" : "7",
+        "response" : false
+      } ],
+      "title" : "Lead Process"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elementId" : "59",
+      "elements" : [ {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "68",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "71",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "72",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "73",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "74",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalBoundariesVisible" : false,
+      "generatedKey" : true,
+      "key" : "Dynamic-002",
+      "order" : 17,
+      "relationships" : [ {
+        "description" : "Automatically Creates",
+        "id" : "200",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "Appointment Issued to Sales Person",
+        "id" : "205",
+        "order" : "2",
+        "response" : false
+      }, {
+        "description" : "Estimates are Created",
+        "id" : "207",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "Sold",
+        "id" : "206",
+        "order" : "4",
+        "response" : false
+      }, {
+        "description" : "Job is Sold",
+        "id" : "212",
+        "order" : "5",
+        "response" : false
+      }, {
+        "description" : "Manually create projects (required step)",
+        "id" : "216",
+        "order" : "6",
+        "response" : false
+      }, {
+        "description" : "Won",
+        "id" : "217",
+        "order" : "7",
+        "response" : false
+      } ],
+      "title" : "Opportunity Process"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "generatedKey" : true,
+      "key" : "SystemContext-001",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "100"
+      }, {
+        "id" : "102"
+      }, {
+        "id" : "110"
+      }, {
+        "id" : "111"
+      }, {
+        "id" : "112"
+      }, {
+        "id" : "113"
+      }, {
+        "id" : "114"
+      }, {
+        "id" : "116"
+      }, {
+        "id" : "119"
+      }, {
+        "id" : "131"
+      }, {
+        "id" : "154"
+      }, {
+        "id" : "91"
+      }, {
+        "id" : "92"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "95"
+      }, {
+        "id" : "96"
+      } ],
+      "softwareSystemId" : "28"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "generatedKey" : true,
+      "key" : "SystemContext-002",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "114"
+      }, {
+        "id" : "115"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "95"
+      } ],
+      "softwareSystemId" : "15"
+    } ]
+  }
+}

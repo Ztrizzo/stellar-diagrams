@@ -1,0 +1,20 @@
+@startuml
+set separator none
+title QuickBooks - System Context
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+
+System(QuickBooks, "QuickBooks", $descr="Accounting Software", $tags="", $link="")
+System(Salesforce, "Salesforce", $descr="Salesforce CRM", $tags="", $link="")
+Person(Accounting, "Accounting", $descr="", $tags="", $link="")
+
+Rel(Accounting, Salesforce, "Uses", $techn="", $tags="", $link="")
+Rel(Accounting, QuickBooks, "Uses", $techn="", $tags="", $link="")
+Rel(Salesforce, QuickBooks, "Reads Payments/Invoices", $techn="", $tags="", $link="")
+Rel(QuickBooks, Salesforce, "2-way Sync to Accounts", $techn="", $tags="", $link="")
+
+SHOW_LEGEND(true)
+@enduml

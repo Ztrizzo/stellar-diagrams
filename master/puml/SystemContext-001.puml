@@ -1,0 +1,42 @@
+@startuml
+set separator none
+title Salesforce - System Context
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+
+Person(Sales, "Sales", $descr="", $tags="", $link="")
+System(RingCentral, "Ring Central", $descr="Telephony Software", $tags="", $link="")
+System(QuickBooks, "QuickBooks", $descr="Accounting Software", $tags="", $link="")
+System(LeadAggregators, "Lead Aggregators", $descr="Several external systems that collect leads", $tags="", $link="")
+Person(Manager, "Manager", $descr="", $tags="", $link="")
+System(Salesforce, "Salesforce", $descr="Salesforce CRM", $tags="", $link="")
+Person(CallCenter, "Call Center", $descr="", $tags="", $link="")
+Person(Canvasser, "Canvasser", $descr="", $tags="", $link="")
+Person(Admin, "Admin", $descr="", $tags="", $link="")
+Person(Accounting, "Accounting", $descr="", $tags="", $link="")
+Person(ProjectManager, "Project Manager", $descr="", $tags="", $link="")
+Person(Dispatcher, "Dispatcher", $descr="", $tags="", $link="")
+System(OneClickContractor, "One Click Contractor", $descr="Quoting Software", $tags="", $link="")
+
+Rel(CallCenter, RingCentral, "Uses", $techn="", $tags="", $link="")
+Rel(LeadAggregators, Salesforce, "Creates Leads", $techn="", $tags="", $link="")
+Rel(Sales, Salesforce, "Uses", $techn="", $tags="", $link="")
+Rel(CallCenter, Salesforce, "Uses", $techn="", $tags="", $link="")
+Rel(Canvasser, Salesforce, "Uses", $techn="", $tags="", $link="")
+Rel(Admin, Salesforce, "Uses", $techn="", $tags="", $link="")
+Rel(Accounting, Salesforce, "Uses", $techn="", $tags="", $link="")
+Rel(Dispatcher, Salesforce, "Uses", $techn="", $tags="", $link="")
+Rel(Salesforce, RingCentral, "Calls Leads", $techn="", $tags="", $link="")
+Rel(Manager, Salesforce, "Views and sets all availability", $techn="", $tags="", $link="")
+Rel(ProjectManager, Salesforce, "Uses", $techn="", $tags="", $link="")
+Rel(Salesforce, OneClickContractor, "Creates Jobs", $techn="", $tags="", $link="")
+Rel(OneClickContractor, Salesforce, "Creates Estimates", $techn="", $tags="", $link="")
+Rel(Salesforce, QuickBooks, "Reads Payments/Invoices", $techn="", $tags="", $link="")
+Rel(QuickBooks, Salesforce, "2-way Sync to Accounts", $techn="", $tags="", $link="")
+Rel(Sales, OneClickContractor, "Uses", $techn="", $tags="", $link="")
+
+SHOW_LEGEND(true)
+@enduml

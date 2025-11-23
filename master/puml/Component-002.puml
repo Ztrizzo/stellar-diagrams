@@ -1,0 +1,27 @@
+@startuml
+set separator none
+title Salesforce - Production App - Components
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
+
+Person(ProjectManager, "Project Manager", $descr="", $tags="", $link="")
+Person(Dispatcher, "Dispatcher", $descr="", $tags="", $link="")
+Container(Salesforce.AvailabilityService, "Availability Service", $techn="", $descr="LWC on a custom tab", $tags="", $link="")
+
+Container_Boundary("Salesforce.ProductionApp_boundary", "Production App", $tags="") {
+  Component(Salesforce.ProductionApp.AvailibilityPage, "Availibility Page", $techn="", $descr="", $tags="", $link="")
+  Component(Salesforce.ProductionApp.ProjectScheduling, "Project Scheduling", $techn="", $descr="", $tags="", $link="")
+}
+
+Rel(Salesforce.ProductionApp.AvailibilityPage, Salesforce.AvailabilityService, "Sets availability", $techn="", $tags="", $link="")
+Rel(ProjectManager, Salesforce.ProductionApp.ProjectScheduling, "Schedules Crews", $techn="", $tags="", $link="")
+Rel(ProjectManager, Salesforce.ProductionApp.AvailibilityPage, "Checks Availabilities", $techn="", $tags="", $link="")
+Rel(Dispatcher, Salesforce.ProductionApp.AvailibilityPage, "Views all availabilities", $techn="", $tags="", $link="")
+
+SHOW_LEGEND(true)
+@enduml

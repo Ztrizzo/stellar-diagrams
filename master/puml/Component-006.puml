@@ -1,0 +1,23 @@
+@startuml
+set separator none
+title Salesforce - Field Service App - Components
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Component>
+
+Person(ProjectManager, "Project Manager", $descr="", $tags="", $link="")
+Person(Dispatcher, "Dispatcher", $descr="", $tags="", $link="")
+
+Container_Boundary("Salesforce.FieldServiceApp_boundary", "Field Service App", $tags="") {
+  Component(Salesforce.FieldServiceApp.DispatcherConsole, "Dispatcher Console", $techn="", $descr="", $tags="", $link="")
+  Component(Salesforce.FieldServiceApp.FieldServiceMobile, "Field Service Mobile", $techn="", $descr="", $tags="", $link="")
+}
+
+Rel(ProjectManager, Salesforce.FieldServiceApp.FieldServiceMobile, "Uses", $techn="", $tags="", $link="")
+Rel(Dispatcher, Salesforce.FieldServiceApp.DispatcherConsole, "Dispatches sales people and production teams", $techn="", $tags="", $link="")
+
+SHOW_LEGEND(true)
+@enduml

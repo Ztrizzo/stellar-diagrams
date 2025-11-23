@@ -1,0 +1,23 @@
+@startuml
+set separator none
+title Salesforce - Canvasser App - Components
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Component>
+
+Person(Canvasser, "Canvasser", $descr="", $tags="", $link="")
+
+Container_Boundary("Salesforce.CanvasserApp_boundary", "Canvasser App", $tags="") {
+  Component(Salesforce.CanvasserApp.OpportunityRecordPage, "Opportunity Record Page", $techn="", $descr="", $tags="", $link="")
+  Component(Salesforce.CanvasserApp.LeadRecordPage, "Lead Record Page", $techn="", $descr="", $tags="", $link="")
+}
+
+Rel(Canvasser, Salesforce.CanvasserApp.LeadRecordPage, "Dials Leads", $techn="", $tags="", $link="")
+Rel(Canvasser, Salesforce.CanvasserApp.LeadRecordPage, "Schedules Appointments", $techn="", $tags="", $link="")
+Rel(Canvasser, Salesforce.CanvasserApp.OpportunityRecordPage, "Views Converted Opportunities", $techn="", $tags="", $link="")
+
+SHOW_LEGEND(true)
+@enduml
