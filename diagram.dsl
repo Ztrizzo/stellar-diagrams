@@ -1,14 +1,14 @@
 workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
     model {
         # Actors
-        salesUser = person "Sales" "[Sales]" ""
-        managerUser = person "Manager" "[Manager]" "tag"
-        callCenterUser = person "Call Center" "[Call Center]" "tag"
-        canvasserUser = person "Canvasser" "[Canvasser]" "tag"
-        adminUser = person "Admin" "[System Admin: Profile]" "tag"
-        accountingUser = person "Accounting" "[Accounting]" "tag"
-        projectManagerUser = person "Project Manager" "[Project Manager]" "tag"
-        dispatcherUser = person "Dispatcher" "[Dispatcher]" "tag"
+        salesUser = person "Sales"
+        managerUser = person "Manager"
+        callCenterUser = person "Call Center"
+        canvasserUser = person "Canvasser"
+        adminUser = person "Admin"
+        accountingUser = person "Accounting"
+        projectManagerUser = person "Project Manager"
+        dispatcherUser = person "Dispatcher"
 
         # External Systems
         oneClickContractor = softwareSystem "One Click Contractor" "Quoting Software" "external"{
@@ -36,7 +36,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
 
         # Internal System
         salesforce = softwareSystem "Salesforce" "Salesforce CRM" {
-            salesApp = container "Sales App" {
+            salesApp = container "Sales App" "[Standard]" {
                 salesOpportunityRecordPage = component "Opportunity Record Page"
                 salesAvailabilityPage = component "Availibility Page"
                 salesContactPage = component "Contact Page"
@@ -44,21 +44,21 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 salesEstimatePage = component "Estimate Page"
                 salesProjectPage = component "Project Page"
             }
-            productionApp = container "Production App" {
+            productionApp = container "Production App" "[Standard]" {
                 productionAvailabilityPage = component "Availibility Page"
                 projectScheduling = component "Project Scheduling"
             }
-            callCenterApp = container "Call Center App"{
+            callCenterApp = container "Call Center App" "[Console]"{
                 appointmentScheduling = component "Appointment Scheduling"
                 callCenterLeadRecordPage = component "Lead Record Page"
                 omnichannel = component "Omnichannel"
                 ringCentralSalesforcePackage = component "Ring Central Salesforce Package"
             }
-            canvasserApp = container "Canvasser App"{
+            canvasserApp = container "Canvasser App" "[Standard]"{
                 canvasserOpportunityRecordPage = component "Opportunity Record Page"
                 canvasserLeadRecordPage = component "Lead Record Page"
             }
-            fieldService = container "Field Service App" {
+            fieldService = container "Field Service App" "[Standard]"{
                 dispatcherConsole = component "Dispatcher Console"
                 fieldServiceMobile = component "Field Service Mobile"
             }
@@ -71,6 +71,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 availabilitySalesView = component "Availability Sales View" "Allows sales people to view and set their own availabilities"
                 availabilityCrewView = component "Availability Crew View" "Allows crew leads to view and set their own availabilities"
                 availabilityCalendarBlocking = component "Availability Calendar Blocking" "Allows certain time periods to be blocked"
+                availabilityShiftCreation = component "Availability Shift Creation" "Creates shift records behind the scenes"
             }
             reports = container "Reports/Dashboards" {
                 individualCanvasserDahsboard = component "Individual Canvasser Dashboard"
@@ -80,7 +81,6 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 individualProjectManagerDashboard = component "Individual Project Manager Dashboard"
                 managerProjectManagerDashboard = component "Project Manager Dashboard"
                 individualDispatcherDashboard = component "Individual Dispatcher Dashboard"
-                managerDispatcherDashboard = component "Manager Dispatcher Dashboard"
             }
 
             permissionSets = container "Permission Set Groups" {
@@ -127,21 +127,26 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         ringCentralSalesforcePackage -> ringCentral "Calls Leads"
 
         # Container-to-Container Relationships
-        productionAvailabilityPage -> availabilityService "Uses for setting availabilities"
-        salesAvailabilityPage -> availabilityService "Uses for setting availabilities"
+        productionAvailabilityPage -> availabilityCrewView "Sets availability"
+        salesAvailabilityPage -> availabilitySalesView "Sets availability"
         salesProjectPage -> commissionCalculationService "Calculates Commissions"
+        managerUser -> availabilityService "Views and sets all availability"
+
+        # Availability Service Relationships
+        availabilityManagerView -> availabilityShiftCreation "Creates Shifts"
+        availabilitySalesView -> availabilityShiftCreation "Creates Shifts"
+        availabilityCrewView -> availabilityShiftCreation "Creates Shifts"
 
 
         # Dashboard Relationships
-        salesUser -> individualSalesDashboard "Views"
-        canvasserUser -> individualCanvasserDahsboard "Views"
-        projectManagerUser -> individualProjectManagerDashboard "Views"
-        projectManagerUser -> managerProjectManagerDashboard "Views"
-        dispatcherUser -> individualDispatcherDashboard "Views"
-        managerUser -> managerSalesDashboard "Views"
-        managerUser -> managerCanvasserDashboard "Views"
-        managerUser -> managerDispatcherDashboard "Views"
-        managerUser -> managerProjectManagerDashboard "Views"
+        salesApp -> individualSalesDashboard "Has"
+        canvasserApp -> individualCanvasserDahsboard "Has"
+        productionApp -> individualProjectManagerDashboard "Has"
+        fieldService -> managerProjectManagerDashboard "Has"
+        fieldService -> individualDispatcherDashboard "Has"
+        salesApp -> managerSalesDashboard "Has"
+        canvasserApp -> managerCanvasserDashboard "Has"
+        productionApp -> managerProjectManagerDashboard "Has"
 
         # Call Center User Relationships
         callCenterUser -> callCenterLeadRecordPage "Dials Leads"
@@ -155,9 +160,20 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         projectManagerUser -> projectScheduling "Schedules Crews"
         projectManagerUser -> productionAvailabilityPage "Checks Availabilities"
 
+        # Manager Relationships
+        managerUser -> salesApp "Views Reports"
+        managerUser -> canvasserApp "Views Reports"
+        managerUser -> productionApp "Views Reports"
+
+        #Sales User Relationships
+        salesUser -> salesAvailabilityPage "Uses"
+        salesUser -> salesOpportunityRecordPage "Uses"
+        salesUser -> salesContactPage "Uses"
+        salesUser -> salesProjectPage "Uses"
+        salesUser -> salesEstimatePage "Uses"
+        salesUser -> salesAccountPage "Uses"
+
         # User Relationships
-        salesUser -> salesAvailabilityPage "View/Set Availability"
-        salesUser -> salesOpportunityRecordPage "Records Sales Data"
         canvasserUser -> canvasserLeadRecordPage "Dials Leads"
         canvasserUser -> canvasserLeadRecordPage "Schedules Appointments"
         canvasserUser -> canvasserOpportunityRecordPage "Views Converted Opportunities"
@@ -168,6 +184,14 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
 
         # Component-to-Component Relationships
         commissionsProjectTriggeredFlow -> commissionsCalculationAutolaunchedFlow "Uses to calculate commissions"
+
+        # Permission Set Relationships
+        salesUser -> salesPermissionSet "Has"
+        managerUser -> managerPermissionSet "Has"
+        canvasserUser -> canvasserPermissionSet "Has"
+        dispatcherUser -> dispatcherPermissionSet "Has"
+        accountingUser -> accountingPermissionSet "Has"
+        projectManagerUser -> projectManagerPermissionSet "Has"
     }
     views {
         systemContext salesforce {
@@ -200,6 +224,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         container salesforce {
             include *
                 autolayout
+                exclude *->permissionSets
         }
 
         component salesApp {
@@ -238,6 +263,11 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 autolayout
         }
         component reports {
+            include *
+                autolayout
+        }
+
+        component permissionSets {
             include *
                 autolayout
         }
