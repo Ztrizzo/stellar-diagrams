@@ -73,8 +73,11 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 availabilityCalendarBlocking = component "Availability Calendar Blocking" "Allows certain time periods to be blocked"
                 availabilityShiftCreation = component "Availability Shift Creation" "Creates shift records behind the scenes"
             }
-            database = container "Database"{
-                leads = component "Leads"
+            processMaps = container "Process Maps"{
+                newLead = component "New Lead"
+                setLead = component "Set Lead"
+                verifiedLead = component "Verified Lead"
+                confirmedLead = component "Confirmed Lead"
                 opportunities = component "Opportunities"
                 accounts = component "Accounts"
                 contacts = component "Contacts"
@@ -82,6 +85,11 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 projects = component "Projects"
                 serviceAppointments = component "Service Appointments"
                 shifts = component "Shifts"
+                confirmedOpportunity = component "Confirmed Opportunity"
+                issuedOpportunity = component "Issued Opportunity"
+                soldOpportunity = component "Sold Opportunity"
+                closedWonOpportunity = component "Closed Won Opportunity"
+                closedListOpportunity = component "Closed List Opportunity"
             }
             reports = container "Reports/Dashboards" {
                 individualCanvasserDahsboard = component "Individual Canvasser Dashboard"
@@ -203,15 +211,22 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         accountingUser -> accountingPermissionSet "Has"
         projectManagerUser -> projectManagerPermissionSet "Has"
 
-        # Database Relationships
-        leads -> opportunities "Converts"
-        leads -> accounts "Converts"
-        leads -> contacts "Converts"
-        leads -> estimates "Converts"
-        leads -> projects "Converts"
-        leads -> serviceAppointments "Converts"
-        leads -> shifts "Converts"
+        # Process Map Relationships
+        newLead -> setLead "Appointment is Set"
+        setLead -> verifiedLead "Appointment is Verified"
+        verifiedLead -> confirmedLead "Appointment is Confirmed"
+        confirmedLead -> opportunities "Converts"
+        confirmedLead -> accounts "Converts"
+        confirmedLead -> contacts "Converts"
         opportunities -> projects "Creates"
+        confirmedOpportunity -> oneClickContractorJobs "Automatically Creates"
+        confirmedOpportunity -> issuedOpportunity "Appointment Issued to Sales Person"
+        issuedOpportunity -> soldOpportunity "Sold"
+        oneClickContractorEstimates -> issuedOpportunity "Estimates are Created"
+        oneClickContractorJobs -> soldOpportunity "Job is Sold"
+        soldOpportunity -> projects "Manually create projects (required step)"
+        projects -> closedWonOpportunity "Won"
+
     }
     views {
         systemContext salesforce {
@@ -243,6 +258,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
 
         container salesforce {
             include *
+                exclude processMaps
                 autolayout
                 exclude *->permissionSets
         }
@@ -292,13 +308,28 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 autolayout
         }
 
-        dynamic database {
-            title "Sales Process"
+        dynamic processMaps {
+            title "Lead Process"
             autolayout lr
-            leads -> opportunities "Converts"
-            leads -> accounts "Converts"
-            leads -> contacts "Converts"
+            newLead -> setLead "Appointment is Set"
+            setLead -> verifiedLead "Appointment is Verified"
+            verifiedLead -> confirmedLead "Appointment is Confirmed"
+            confirmedLead -> opportunities "Converts"
+            confirmedLead -> accounts "Converts"
+            confirmedLead -> contacts "Converts"
             opportunities -> projects "Creates"
+        }
+
+        dynamic processMaps {
+            title "Opportunity Process"
+            autolayout lr
+            confirmedOpportunity -> oneClickContractorJobs "Automatically Creates"
+            confirmedOpportunity -> issuedOpportunity "Appointment Issued to Sales Person"
+            oneClickContractorEstimates -> issuedOpportunity "Estimates are Created"
+            issuedOpportunity -> soldOpportunity "Sold"
+            oneClickContractorJobs -> soldOpportunity "Job is Sold"
+            soldOpportunity -> projects "Manually create projects (required step)"
+            projects -> closedWonOpportunity "Won"
         }
     }
 }
