@@ -73,6 +73,16 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 availabilityCalendarBlocking = component "Availability Calendar Blocking" "Allows certain time periods to be blocked"
                 availabilityShiftCreation = component "Availability Shift Creation" "Creates shift records behind the scenes"
             }
+            database = container "Database"{
+                leads = component "Leads"
+                opportunities = component "Opportunities"
+                accounts = component "Accounts"
+                contacts = component "Contacts"
+                estimates = component "Estimates"
+                projects = component "Projects"
+                serviceAppointments = component "Service Appointments"
+                shifts = component "Shifts"
+            }
             reports = container "Reports/Dashboards" {
                 individualCanvasserDahsboard = component "Individual Canvasser Dashboard"
                 managerCanvasserDashboard = component "Manager Canvasser Dashboard"
@@ -192,6 +202,16 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         dispatcherUser -> dispatcherPermissionSet "Has"
         accountingUser -> accountingPermissionSet "Has"
         projectManagerUser -> projectManagerPermissionSet "Has"
+
+        # Database Relationships
+        leads -> opportunities "Converts"
+        leads -> accounts "Converts"
+        leads -> contacts "Converts"
+        leads -> estimates "Converts"
+        leads -> projects "Converts"
+        leads -> serviceAppointments "Converts"
+        leads -> shifts "Converts"
+        opportunities -> projects "Creates"
     }
     views {
         systemContext salesforce {
@@ -270,6 +290,15 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         component permissionSets {
             include *
                 autolayout
+        }
+
+        dynamic database {
+            title "Sales Process"
+            autolayout lr
+            leads -> opportunities "Converts"
+            leads -> accounts "Converts"
+            leads -> contacts "Converts"
+            opportunities -> projects "Creates"
         }
     }
 }
