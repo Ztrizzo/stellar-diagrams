@@ -35,10 +35,17 @@ jobs:
       - name: Generate site
         run: |
           echo "=== Running structurizr-site-generatr ==="
-          ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl || {
-            echo "ERROR: generate-site command failed!"
+          echo "Current directory: $(pwd)"
+          ls -la
+          echo ""
+          ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl 2>&1 | tee build.log
+          BUILD_EXIT=${PIPESTATUS[0]}
+          echo ""
+          echo "Build exit code: $BUILD_EXIT"
+          if [ $BUILD_EXIT -ne 0 ]; then
+            echo "ERROR: Build failed!"
             exit 1
-          }
+          fi
           echo "=== Build command completed ==="
 
       - name: Check build output
