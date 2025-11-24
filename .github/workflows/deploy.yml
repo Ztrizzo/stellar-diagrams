@@ -35,8 +35,29 @@ jobs:
       - name: Generate site
         run: ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
 
+      - name: Check what was generated
+        run: |
+          echo "=== Listing all directories in workspace ==="
+          find . -type d -maxdepth 3 | sort
+          echo ""
+          echo "=== Looking for index.html files ==="
+          find . -name "index.html" -type f
+          echo ""
+          if [ -d "build" ]; then
+            echo "=== Contents of build/ ==="
+            ls -la build/
+          else
+            echo "ERROR: No build directory found!"
+          fi
+
       - name: Add .nojekyll file
-        run: touch build/serve/.nojekyll
+        run: |
+          if [ -d "build/serve" ]; then
+            touch build/serve/.nojekyll
+          else
+            echo "ERROR: build/serve does not exist, cannot add .nojekyll"
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
