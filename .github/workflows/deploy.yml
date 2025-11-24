@@ -32,8 +32,16 @@ jobs:
       - name: Generate site
         run: ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
 
+      - name: Check build output
+        run: |
+          echo "Checking build directory structure:"
+          ls -la build/ || echo "No build directory"
+          ls -la build/serve/ || echo "No build/serve directory"
+
       - name: Add .nojekyll file
-        run: touch build/serve/.nojekyll
+        run: |
+          mkdir -p build/serve
+          touch build/serve/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
