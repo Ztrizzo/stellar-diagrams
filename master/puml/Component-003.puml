@@ -1,0 +1,19 @@
+@startuml
+set separator none
+title Salesforce - Commission Calculation Service - Components
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Component>
+
+Container_Boundary("Salesforce.CommissionCalculationService_boundary", "Commission Calculation Service", $tags="") {
+  Component(Salesforce.CommissionCalculationService.CommissionsCalculationAutolaunchedFlow, "Commissions Calculation Autolaunched Flow", $techn="", $descr="Calculates commissions based on opportunity amount, people associated, and other factors", $tags="", $link="")
+  Component(Salesforce.CommissionCalculationService.CommissionsProjectTriggeredFlow, "Commissions Project Triggered Flow", $techn="", $descr="Triggers commissions calculation when a project is moved to 'Ready for Production'", $tags="", $link="")
+}
+
+Rel(Salesforce.CommissionCalculationService.CommissionsProjectTriggeredFlow, Salesforce.CommissionCalculationService.CommissionsCalculationAutolaunchedFlow, "Uses to calculate commissions", $techn="", $tags="", $link="")
+
+SHOW_LEGEND(true)
+@enduml

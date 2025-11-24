@@ -1,0 +1,35 @@
+@startuml
+set separator none
+title Salesforce - Sales App - Components
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
+
+Person(Sales, "Sales", $descr="", $tags="", $link="")
+Container(Salesforce.CommissionCalculationService, "Commission Calculation Service", $techn="", $descr="", $tags="", $link="")
+Container(Salesforce.AvailabilityService, "Availability Service", $techn="", $descr="LWC on a custom tab", $tags="", $link="")
+
+Container_Boundary("Salesforce.SalesApp_boundary", "Sales App", $tags="") {
+  Component(Salesforce.SalesApp.OpportunityRecordPage, "Opportunity Record Page", $techn="", $descr="", $tags="", $link="")
+  Component(Salesforce.SalesApp.AvailibilityPage, "Availibility Page", $techn="", $descr="", $tags="", $link="")
+  Component(Salesforce.SalesApp.ContactPage, "Contact Page", $techn="", $descr="", $tags="", $link="")
+  Component(Salesforce.SalesApp.AccountPage, "Account Page", $techn="", $descr="", $tags="", $link="")
+  Component(Salesforce.SalesApp.EstimatePage, "Estimate Page", $techn="", $descr="", $tags="", $link="")
+  Component(Salesforce.SalesApp.ProjectPage, "Project Page", $techn="", $descr="", $tags="", $link="")
+}
+
+Rel(Salesforce.SalesApp.AvailibilityPage, Salesforce.AvailabilityService, "Sets availability", $techn="", $tags="", $link="")
+Rel(Salesforce.SalesApp.ProjectPage, Salesforce.CommissionCalculationService, "Calculates Commissions", $techn="", $tags="", $link="")
+Rel(Sales, Salesforce.SalesApp.AvailibilityPage, "Uses", $techn="", $tags="", $link="")
+Rel(Sales, Salesforce.SalesApp.OpportunityRecordPage, "Uses", $techn="", $tags="", $link="")
+Rel(Sales, Salesforce.SalesApp.ContactPage, "Uses", $techn="", $tags="", $link="")
+Rel(Sales, Salesforce.SalesApp.ProjectPage, "Uses", $techn="", $tags="", $link="")
+Rel(Sales, Salesforce.SalesApp.EstimatePage, "Uses", $techn="", $tags="", $link="")
+Rel(Sales, Salesforce.SalesApp.AccountPage, "Uses", $techn="", $tags="", $link="")
+
+SHOW_LEGEND(true)
+@enduml
