@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Download Structurizr Site Generatr
+        run: |
+          wget https://github.com/avisi-cloud/structurizr-site-generatr/releases/latest/download/structurizr-site-generatr.zip
+          unzip structurizr-site-generatr.zip
+          chmod +x structurizr-site-generatr
+
+      - name: Generate site
+        run: ./structurizr-site-generatr generate-site --workspace-file diagram.dsl
+
+      - name: Add .nojekyll file
+        run: touch build/serve/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/serve
+          publish_branch: gh-pages
