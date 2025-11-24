@@ -24,12 +24,13 @@ jobs:
 
       - name: Download Structurizr Site Generatr
         run: |
-          wget https://github.com/avisi-cloud/structurizr-site-generatr/releases/latest/download/structurizr-site-generatr.zip
-          unzip structurizr-site-generatr.zip
-          chmod +x structurizr-site-generatr
+          VERSION=1.5.2
+          wget https://github.com/avisi-cloud/structurizr-site-generatr/releases/download/${VERSION}/structurizr-site-generatr-${VERSION}.zip
+          unzip structurizr-site-generatr-${VERSION}.zip
+          chmod +x structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr
 
       - name: Generate site
-        run: ./structurizr-site-generatr generate-site --workspace-file diagram.dsl
+        run: ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
 
       - name: Add .nojekyll file
         run: touch build/serve/.nojekyll
