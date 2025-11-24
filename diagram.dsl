@@ -44,6 +44,9 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 salesEstimatePage = component "Estimate Page"
                 salesProjectPage = component "Project Page"
             }
+            accountingApp = container "Accounting App" "[Standard]" {
+                quickbooksObjects = component "Quickbooks Objects"
+            }
             productionApp = container "Production App" "[Standard]" {
                 productionAvailabilityPage = component "Availibility Page"
                 projectScheduling = component "Project Scheduling"
@@ -110,6 +113,15 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 projectManagerPermissionSet = component "Project Manager"
             }
 
+            profiles = container "Profiles" {
+                salesProfile = component "Stellar Sales"
+                managerProfile = component "Stellar Manager"
+                canvasserProfile = component "Stellar Canvasser"
+                dispatcherProfile = component "Stellar Dispatcher"
+                accountingProfile = component "Stellar Accounting"
+                projectManagerProfile = component "Stellar Project Manager"
+            }
+
         }
 
         
@@ -148,7 +160,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         productionAvailabilityPage -> availabilityCrewView "Sets availability"
         salesAvailabilityPage -> availabilitySalesView "Sets availability"
         salesProjectPage -> commissionCalculationService "Calculates Commissions"
-        managerUser -> availabilityService "Views and sets all availability"
+        managerUser -> salesApp "Views and sets all availability"
 
         # Availability Service Relationships
         availabilityManagerView -> availabilityShiftCreation "Creates Shifts"
@@ -179,9 +191,9 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         projectManagerUser -> productionAvailabilityPage "Checks Availabilities"
 
         # Manager Relationships
-        managerUser -> salesApp "Views Reports"
-        managerUser -> canvasserApp "Views Reports"
-        managerUser -> productionApp "Views Reports"
+        # managerUser -> salesApp "Views Reports"
+        # managerUser -> canvasserApp "Views Reports"
+        # managerUser -> productionApp "Views Reports"
 
         #Sales User Relationships
         salesUser -> salesAvailabilityPage "Uses"
@@ -199,6 +211,7 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         dispatcherUser -> productionAvailabilityPage "Views all availabilities"
         accountingUser -> quickBooksInvoices "Creates Invoices"
         accountingUser -> quickbooksPayments "Records Payments"
+        accountingUser -> quickbooksObjects "Uses"
 
         # Component-to-Component Relationships
         commissionsProjectTriggeredFlow -> commissionsCalculationAutolaunchedFlow "Uses to calculate commissions"
@@ -210,6 +223,14 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         dispatcherUser -> dispatcherPermissionSet "Has"
         accountingUser -> accountingPermissionSet "Has"
         projectManagerUser -> projectManagerPermissionSet "Has"
+
+        # Profile Relationships
+        salesUser -> salesProfile "Has"
+        managerUser -> managerProfile "Has"
+        canvasserUser -> canvasserProfile "Has"
+        dispatcherUser -> dispatcherProfile "Has"
+        accountingUser -> accountingProfile "Has"
+        projectManagerUser -> projectManagerProfile "Has"
 
         # Process Map Relationships
         newLead -> setLead "Appointment is Set"
@@ -259,8 +280,10 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
         container salesforce {
             include *
                 exclude processMaps
+                exclude reports
                 autolayout
                 exclude *->permissionSets
+                exclude *->profiles
         }
 
         component salesApp {
@@ -303,7 +326,17 @@ workspace "Stellar Roofing" "System Diagram for Stellar Roofing Salesforce" {
                 autolayout
         }
 
+        component profiles {
+            include *
+                autolayout
+        }
+
         component permissionSets {
+            include *
+                autolayout
+        }
+
+        component accountingApp {
             include *
                 autolayout
         }
