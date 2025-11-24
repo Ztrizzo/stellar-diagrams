@@ -1,0 +1,20 @@
+@startuml
+set separator none
+title Salesforce - Accounting App - Components
+
+top to bottom direction
+
+!include <C4/C4>
+!include <C4/C4_Context>
+!include <C4/C4_Component>
+
+Person(Accounting, "Accounting", $descr="", $tags="", $link="")
+
+Container_Boundary("Salesforce.AccountingApp_boundary", "Accounting App", $tags="") {
+  Component(Salesforce.AccountingApp.QuickbooksObjects, "Quickbooks Objects", $techn="", $descr="", $tags="", $link="")
+}
+
+Rel(Accounting, Salesforce.AccountingApp.QuickbooksObjects, "Uses", $techn="", $tags="", $link="")
+
+SHOW_LEGEND(true)
+@enduml

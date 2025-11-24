@@ -17,10 +17,10 @@ System_Boundary("QuickBooks_boundary", "QuickBooks", $tags="") {
   Container(QuickBooks.Customers, "Customers", $techn="", $descr="", $tags="", $link="")
 }
 
+Rel(QuickBooks.Customers, Salesforce, "2-way Sync to Accounts", $techn="", $tags="", $link="")
 Rel(Accounting, Salesforce, "Uses", $techn="", $tags="", $link="")
 Rel(Accounting, QuickBooks.Invoices, "Creates Invoices", $techn="", $tags="", $link="")
 Rel(Accounting, QuickBooks.Payments, "Records Payments", $techn="", $tags="", $link="")
-Rel(QuickBooks.Customers, Salesforce, "2-way Sync to Accounts", $techn="", $tags="", $link="")
 
 SHOW_LEGEND(true)
 @enduml
