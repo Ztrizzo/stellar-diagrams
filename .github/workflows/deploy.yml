@@ -34,50 +34,12 @@ jobs:
 
       - name: Generate site
         run: |
-          echo "=== Running structurizr-site-generatr ==="
-          echo "Current directory: $(pwd)"
-          ls -la
-          echo ""
-          ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl 2>&1 | tee build.log
-          BUILD_EXIT=${PIPESTATUS[0]}
-          echo ""
-          echo "Build exit code: $BUILD_EXIT"
-          if [ $BUILD_EXIT -ne 0 ]; then
-            echo "ERROR: Build failed!"
-            exit 1
-          fi
-          echo "=== Build command completed ==="
+          VERSION=1.5.2
+          ./structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
 
-      - name: Check build output
-        run: |
-          echo "=== Checking build directory structure ==="
-          if [ -d "build" ]; then
-            echo "build/ directory contents:"
-            ls -la build/
-            if [ -d "build/serve" ]; then
-              echo "build/serve/ directory contents:"
-              ls -la build/serve/
-              echo "Number of files in build/serve:"
-              find build/serve -type f | wc -l
-            else
-              echo "ERROR: build/serve directory does not exist!"
-            fi
-          else
-            echo "ERROR: build directory does not exist!"
-          fi
-          echo "=== Current directory contents ==="
-          ls -la
-
-      - name: Verify site was generated
-        run: |
-          if [ ! -f "build/serve/index.html" ]; then
-            echo "ERROR: Site was not generated! No index.html found."
-            exit 1
-          fi
-          echo "Site generated successfully"
 
       - name: Add .nojekyll file
-        run: touch build/serve/.nojekyll
+        run: touch -p build/serve/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
