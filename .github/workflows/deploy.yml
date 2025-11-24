@@ -28,11 +28,18 @@ jobs:
           wget https://github.com/avisi-cloud/structurizr-site-generatr/releases/download/${VERSION}/structurizr-site-generatr-${VERSION}.zip
           unzip structurizr-site-generatr-${VERSION}.zip
           chmod +x structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr
+          echo "=== Checking structurizr-site-generatr version and options ==="
+          ./structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr --help || true
+          ./structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr version || true
 
       - name: Generate site
         run: |
-          ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
-          echo "Build command completed"
+          echo "=== Running structurizr-site-generatr ==="
+          ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl || {
+            echo "ERROR: generate-site command failed!"
+            exit 1
+          }
+          echo "=== Build command completed ==="
 
       - name: Check build output
         run: |
