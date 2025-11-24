@@ -22,24 +22,21 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Install Graphviz
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+
       - name: Download Structurizr Site Generatr
         run: |
           VERSION=1.5.2
           wget https://github.com/avisi-cloud/structurizr-site-generatr/releases/download/${VERSION}/structurizr-site-generatr-${VERSION}.zip
           unzip structurizr-site-generatr-${VERSION}.zip
           chmod +x structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr
-          echo "=== Checking structurizr-site-generatr version and options ==="
-          ./structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr --help || true
-          ./structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr version || true
 
       - name: Generate site
-        run: |
-          VERSION=1.5.2
-          ./structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
-
+        run: ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
 
       - name: Add .nojekyll file
-        run: touch -p build/serve/.nojekyll
+        run: touch build/serve/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
