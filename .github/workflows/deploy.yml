@@ -30,18 +30,40 @@ jobs:
           chmod +x structurizr-site-generatr-${VERSION}/bin/structurizr-site-generatr
 
       - name: Generate site
-        run: ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
+        run: |
+          ./structurizr-site-generatr-1.5.2/bin/structurizr-site-generatr generate-site --workspace-file diagram.dsl
+          echo "Build command completed"
 
       - name: Check build output
         run: |
-          echo "Checking build directory structure:"
-          ls -la build/ || echo "No build directory"
-          ls -la build/serve/ || echo "No build/serve directory"
+          echo "=== Checking build directory structure ==="
+          if [ -d "build" ]; then
+            echo "build/ directory contents:"
+            ls -la build/
+            if [ -d "build/serve" ]; then
+              echo "build/serve/ directory contents:"
+              ls -la build/serve/
+              echo "Number of files in build/serve:"
+              find build/serve -type f | wc -l
+            else
+              echo "ERROR: build/serve directory does not exist!"
+            fi
+          else
+            echo "ERROR: build directory does not exist!"
+          fi
+          echo "=== Current directory contents ==="
+          ls -la
+
+      - name: Verify site was generated
+        run: |
+          if [ ! -f "build/serve/index.html" ]; then
+            echo "ERROR: Site was not generated! No index.html found."
+            exit 1
+          fi
+          echo "Site generated successfully"
 
       - name: Add .nojekyll file
-        run: |
-          mkdir -p build/serve
-          touch build/serve/.nojekyll
+        run: touch build/serve/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
